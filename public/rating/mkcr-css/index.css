@@ -1,0 +1,436 @@
+*{padding:0;margin:0}
+body{font-family:tahoma;font-size:13pt;/*background-image:url("../images/cover.jpg");background-attachment:fixed;background-position:top*/}
+.height10{height:9px}
+.height12{height:12px}
+a{text-decoration:none;color:#3b5889}
+a:hover{text-decoration:underline}
+.borRad{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+.hid{display:none}
+/* it works for features area and footer */
+ul li{margin-top:9px}
+
+
+
+#headWrap{
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    top: 0;
+    max-width:1150px;
+    background:#fff;
+    border-bottom:0px dashed #c0c0c0;
+    z-index:1;
+}
+
+#headInner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 48px;
+    max-width:1150px;
+    position:relative;
+    color:#000;
+    background:#fff;
+    z-index:10;
+
+}
+
+#contentWrap {
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    z-index: 1;
+    max-width:1150px;
+}
+
+#contentInner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    top:61px;
+    /*background:#fff;*/
+    max-width:1150px;
+    padding-bottom:0px;
+    border:0px solid red;
+}
+
+
+#footWrap {
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    z-index: 1;
+    background: #eae0e5;
+    max-width:1150
+}
+
+#footInner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    top:61px;
+    height: 100px;
+    background:#eae0e5;
+    max-width:1150px;
+
+    padding-top:11px;
+    font-size:10pt;
+}
+
+
+/* for the logo */
+.logo{background-image: url(../images/muwakaba_logo_wide_edges.png);background-repeat: no-repeat;display:inline-block;float:left;width:65px;height:45px;margin-left:2px;margin-top:1px}
+.logo_word{background-image: url(../images/logo.png);background-repeat: no-repeat;display:inline-block;float:left;width:146px;height:36px;margin-top:9px;margin-left:4px}
+
+.logo_word{width:151px !important}
+
+
+/* for the drop down menu */
+.menu_button{background-image: url(../images/icon_menu_mobile.png);background-repeat: no-repeat;display:inline-block;width:40px;margin-right:3px;cursor:pointer;height:40px;position:absolute;margin-top:5px;right:0;border:0px solid red}
+.menu_body{display:none;width:200px;right:0;background:#fff;position:absolute;top:45px;border:1px solid #666}
+.padding_menu{padding:10px}
+a.menu_item{font-size:11pt;padding:5px;color:#b30059;background:#fff;border:1px solid #b30059}
+a.menu_item:hover{text-decoration:none;background:#b30059;color:#fff;border:1px solid #b30059}
+
+
+/* for the scroll up button */
+.goUp{
+    font-size:9pt;
+    position:fixed;
+    background:#9DACC4;
+    padding:5px 7px 5px 7px;
+    color:#fff;
+    bottom:11px;
+    right:12px;
+    z-index:100;
+    cursor:pointer;
+    text-decoration:none
+}
+
+.goUp:hover{
+    color:cornsilk;
+    text-decoration:none
+}
+
+
+
+.light_green{color:#82b440}
+
+
+
+.container_marginer{margin:0 10px 0 10px}
+
+/* for the products area */
+.products_area{background:#e0e0e0}
+.products_area .header{font-size:23pt;color:#666;text-shadow: 1px 1px #fff}
+
+
+.products_area .box{display:inline-block;border:1px solid #b8b8b8;margin:12px;*display:inline;zoom:1;vertical-align:top;line-height:1.6;position:relative;z-index:6;min-width:200px;max-width:100%;background:#f0f0f0}
+.products_area .box .marginer{margin:10px}
+.products_area .box .marginer .summary{font-size:13pt;color:#a0a0a0}
+.products_area .intro{background:#fff;max-width:200px}
+
+
+._plug_play{
+    background-image:url(../images/plug_play.png);
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat
+}
+._many_features_icon{
+    background-image:url(../images/many.png);
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat
+}
+._cross_browser_icon{
+    background-image:url(../images/cross_browser.png);
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat
+}
+._intelligent_icon{
+    background-image:url(../images/intelligent.png);
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat
+}
+
+
+
+
+/* for the features area */
+.features_area{background:#e6e6e6;text-shadow: 1px 1px #fff}
+
+
+.left_icon{
+    width: 90px;
+    height: 76px;
+    background-position: 50% 50%;
+    float: left;
+    background-repeat:no-repeat;
+}
+
+
+
+/* for the contact area */
+.contact_area .img_text_container{
+    text-align:center;
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    width:100%;
+    max-width:405px;
+    vertical-align:top
+}
+
+.contact_area .img_text_container .text_container{margin-left:105px}
+.contact_area .img_text_container .header{font-size:15pt;font-weight:bold}
+
+.contact{
+    background:#f0f0f0;
+    background-repeat:no-repeat;
+    background-image:url(../images/contact.png);
+    height:115px;
+    width:93px;
+    background-position: center;
+    
+}
+
+
+
+.linkedin{
+    background-image:url(../images/social/linkedin.png);
+    width:50px;
+    height:50px;
+    display:inline-block;
+    margin:7px;
+}
+
+.facebook{
+    background-image:url(../images/social/fb.png);
+    width:50px;
+    height:50px;
+    display:inline-block;
+    margin:7px;
+}
+
+
+.twitter{
+    background-image:url(../images/social/twitter.png);
+    width:50px;
+    height:50px;
+    display:inline-block;
+    margin:7px;
+}
+
+
+.instagram{
+    background-image:url(../images/social/instagram.png);
+    width:50px;
+    height:50px;
+    display:inline-block;
+    margin:7px;
+}
+
+
+.pinterest{
+    background-image:url(../images/social/pinterest.png);
+    width:50px;
+    height:50px;
+    display:inline-block;
+    margin:7px;
+}
+
+
+
+
+/* for the footer */
+
+#footer_list li{display:inline-block;*display:inline;zoom:1;font-size:12pt}
+
+
+
+
+
+
+
+
+.example_button{
+    font-size:9pt;
+    position:fixed;
+    background:gold;
+    padding:5px 7px 5px 7px;
+    color:#fff;
+    top:90px;
+    right:12px;
+    z-index:500000;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.example_button:hover{
+    color:cornsilk;
+    text-decoration:none
+}
+
+
+.first_button{top:90px}
+.second_button{top:140px}
+.third_button{top:190px}
+.fourth_button{top:240px}
+.fifth_button{top:290px}
+
+.buy_now{top:60px;background:#82b440;padding:7px 7px 7px 7px;font-size:12pt}
+
+
+
+
+
+
+
+.setup_icon{
+    background-image:url(../images/setup.png);
+    width:30px;
+    height:30px;
+    border:0px solid #c0c0c0;
+    background-repeat:no-repeat;
+    display:inline-block;*display:inline;zoom:1;
+    margin-right:4px;
+}
+
+.specs_icon{
+    background-image:url(../images/specs.png);
+    width:30px;
+    height:30px;
+    border:0px solid #c0c0c0;
+    background-repeat:no-repeat;
+    display:inline-block;*display:inline;zoom:1;
+    margin-right:4px;
+}
+
+
+.product_icon{
+    background-image:url(../images/product_icon.png);
+    width:100px;
+    height:100px;
+    border:0px solid #c0c0c0;
+    background-repeat:no-repeat;
+    display:inline-block;*display:inline;zoom:1;
+    margin-right:4px;
+}
+
+
+.features_icon{
+    background-image:url(../images/features_icon.png);
+    width:95px;
+    height:95px;
+    border:0px solid #c0c0c0;
+    background-repeat:no-repeat;
+    display:inline-block;*display:inline;zoom:1;
+    margin-right:4px;
+}
+
+
+
+
+.specs_box{font-family:'Droid Sans',tahoma, Calibri, Arial; margin:5px;margin-right:0;padding:5px 7px 5px 7px;display:inline-block;*display:inline;zoom:1;font-size:10pt}
+._1{background:#000000;color:#fff}
+._2{background:#080808;color:#fff}
+._3{background:#101010;color:#fff}
+._4{background:#181818;color:#fff}
+._5{background:#202020;color:#fff}
+._6{background:#282828;color:#fff}
+._7{background:#303030;color:#fff}
+._8{background:#383838;color:#fff}
+._9{background:#404040;color:#fff}
+._10{background:#484848;color:#fff}
+._11{background:#505050;color:#fff}
+._12{background:#585858;color:#fff}
+._13{background:#606060;color:#fff}
+._14{background:#686868;color:#fff}
+._15{background:#707070;color:#fff}
+._16{background:#787878;color:#fff}
+._17{background:#808080;color:#fff}
+._18{background:#888888;color:#fff}
+._19{background:#909090;color:#fff}
+._20{background:#989898;color:#fff}
+._21{background:#A0A0A0;color:#fff}
+._22{background:#A8A8A8;color:#fff}
+._23{background:#B0B0B0;color:#fff}
+._24{background:#B8B8B8;color:#000}
+._25{background:#C0C0C0;color:#000}
+._26{background:#C8C8C8;color:#000}
+._27{background:#D0D0D0;color:#000}
+._28{background:#D8D8D8;color:#000}
+._29{background:#E0E0E0;color:#000}
+._30{background:#E8E8E8;color:#000}
+._31{background:#F0F0F0;color:#000}
+._32{background:#F2F2F2;color:#000}
+._33{background:#F4F4F4;color:#000}
+._34{background:#F8F8F8;color:#000}
+
+
+.product_website .header{font-family:'Droid Sans',tahoma;color:#808080;display:inline-block;*display:inline;zoom:1;vertical-align:top;margin-top:38px}
+
+
+.title{font-size:13pt;font-family:'Droid Sans', tahoma;color:#808080;display:inline-block;*display:inline;zoom:1;vertical-align:top;margin-top:3px}
+
+
+/*
+the below defined in the index.php because in case this CSS page will be slow to load, then we avoid showing non-minimized content onload
+.code{font-family:courier new;color:#666;font-size:11pt;height:130px;overflow:hidden}
+.specs{height:148px;overflow:hidden}
+*/
+
+.full{height:100%}
+
+
+.code .black{font-family:consolas}
+             
+.value{font-family:courier new}
+
+
+.more_button{color:#fff;cursor:pointer;padding: 7px 9px 7px 9px;background:#ffda44;border: 1px solid #ffda44;text-decoration:none;border-radius:50%;-moz-border-radius: 50%;-webkit-border-radius: 50%}
+.more_button:hover{background:#fff;color:#ffda44;text-decoration:none;border: 1px solid #ffda44}
+
+
+
+
+
+
+
+
+/*
+.grad {
+    background: red;
+    background: -webkit-linear-gradient(#f0f0f0, #fff);
+    background: -o-linear-gradient(#f0f0f0, #fff);
+    background: -moz-linear-gradient(#f0f0f0, #fff);
+    background: linear-gradient(#f0f0f0, #fff);
+}
+*/
+
+
+
+.specs_setup{background:#fff;padding:13px}
+
+
+.rtl{direction:rtl;display:inline-block;*display:inline;zoom:1}
+
+
+.red{color:#cc0000;font-weight:bold}
+
+
+
+
+li{margin-bottom:14px;font-size:13pt}
+
+
+
+.ul_features{text-align:left;margin:0px 10px 0 25px;border:0px solid red}
+
+
+
+
+

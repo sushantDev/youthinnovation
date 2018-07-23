@@ -1,0 +1,566 @@
+﻿/* $Id: competition entry content type styles $ */
+
+
+/* COMPETITION ENTRY PAGE */
+
+/* Specify ALL Widths for all sections */
+
+body.page-node-add-competition-entry fieldset.group-basicinformation, 
+body.page-node-edit.node-type-competition-entry fieldset.group-basicinformation,
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.group-basicinformation, 
+body.page-node-add-competition-entry fieldset.group-media, 
+body.page-node-edit.node-type-competition-entry fieldset.group-media,
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.group-media, 
+body.page-node-add-competition-entry fieldset.group-projectsummary, 
+body.page-node-edit.node-type-competition-entry fieldset.group-projectsummary, 
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.group-projectsummary,
+body.page-node-add-competition-entry fieldset.group-impacthowdoesitwork, 
+body.page-node-edit.node-type-competition-entry fieldset.group-impacthowdoesitwork, 
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.group-impacthowdoesitwork,
+body.page-node-add-competition-entry fieldset.group-fundingsbudget, 
+body.page-node-edit.node-type-competition-entry fieldset.group-fundingsbudget, 
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.group-fundingsbudget,
+body.page-node-add-competition-entry fieldset.group-ce-team, 
+body.page-node-edit.node-type-competition-entry fieldset.group-ce-team,  
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.group-ce-team,
+body.page-node-add-competition-entry fieldset.group-ce-extra-fields, 
+body.page-node-edit.node-type-competition-entry fieldset.group-ce-extra-fields, 
+body.page-node-add-competition-entry .field-name-upload, 
+body.page-node-edit.node-type-competition-entry .field-name-upload, 
+body.page-node-add-competition-entry .field-name-field-ce-published,
+body.page-node-edit.node-type-competition-entry .field-name-field-ce-published,
+body.page-node-add-competition-entry .field-name-field-ce-legal-accept,
+body.page-node-edit.node-type-competition-entry .field-name-field-ce-legal-accept {
+	display: block;
+	clear: both;
+	width: 95%;
+	max-width: 95%;
+	margin: 10px auto;
+  border: 1px solid #eee;
+}
+
+body.page-node-add-competition-entry fieldset.filter-wrapper, 
+body.page-node-edit.node-type-competition-entry fieldset.filter-wrapper,
+body.page-node.node-type-competition-entry article.node-competition-entry fieldset.filter-wrapper {
+	display: none;
+}
+
+
+
+
+body.page-node-add-competition-entry legend,
+body.page-node-edit.node-type-competition-entry legend,
+body.page-node.node-type-competition-entry article.node-competition-entry legend {
+	display: block;
+	clear: both;
+	width: 102%;
+	max-width: 102%;
+	text-align: center;
+	background: url("../../cmimages/notch.png") center bottom no-repeat #666;
+	text-transform: uppercase;
+	color: #FFF;
+	min-height: 50px;
+	text-transform: uppercase;
+	border-radius: 5px 5px 0 0;
+	padding-top: 15px;
+	margin: 30px auto 20px auto;
+  position: relative;
+}
+
+
+span.notch {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+body.page-node-add-competition-entry legend a,
+body.page-node-edit.node-type-competition-entry legend a,
+body.page-node.node-type-competition-entry article.node-competition-entry legend a {
+	color: #FFF;
+	font-size: 1.25em;
+}
+
+
+body.page-node-add-competition-entry .field-group-fieldset,
+body.page-node-edit.node-type-competition-entry .field-group-fieldset,
+body.page-node.node-type-competition-entry article.node-competition-entry .field-group-fieldset {
+	width: 95%;
+	max-width: 95%;
+	margin: 20px auto 10px auto;
+}
+
+
+body.page-node-add-competition-entry .field-subgroup-fieldset,
+body.page-node-edit.node-type-competition-entry .field-subgroup-fieldset,
+body.page-node.node-type-competition-entry article.node-competition-entry .field-subgroup-fieldset {
+	width: 95%;
+	max-width: 95%;
+	margin: 20px auto 10px auto;
+}
+
+body.page-node-add-competition-entry .field-subgroup-fieldset legend,
+body.page-node-edit.node-type-competition-entry .field-subgroup-fieldset legend,
+body.page-node.node-type-competition-entry article.node-competition-entry .field-subgroup-fieldset legend {
+	display: block;
+	clear: both;
+	width: 102%;
+	max-width: 102%;
+	margin: 20px auto 10px auto;
+		min-height: 35px;
+}
+
+
+body.page-node-add-competition-entry fieldset#edit-field-ce-image-und legend,
+body.page-node-edit.node-type-competition-entry fieldset#edit-field-ce-image-und legend,
+body.page-node-add-competition-entry fieldset#edit-field-ce-locations-und-0 legend,
+body.page-node-edit.node-type-competition-entry fieldset#edit-field-ce-locations-und-0 legend {
+	display: none;
+}
+
+
+body.page-node-add-competition-entry .field-name-field-ce-whatif, 
+body.page-node-edit.node-type-competition-entry .field-name-field-ce-whatif,
+body.page-node-add-competition-entry .field-name-field-ce-need,
+body.page-node-edit.node-type-competition-entry .field-name-field-ce-need,  
+body.page-node-add-competition-entry .field-name-field-ce-solution, 
+body.page-node-edit.node-type-competition-entry .field-name-field-ce-solution, 
+body.page-node-add-competition-entry.field-name-field-awards, 
+body.page-node-edit.node-type-competition-entry .field-name-field-awards  {
+	width: 745px;
+}
+
+
+
+
+body.page-node-add-competition-entry .droppable-message,
+body.page-node-edit.node-type-competition-entry .droppable-message {
+	background: url("../../cmimages/dragdrop.png") #484848;
+	min-width: 835px;
+	min-height: 145px;
+	margin: 0 auto 10px auto;
+  color: #999999;
+  font-size: 0.95em;
+}
+body.page-node-add-competition-entry .droppable-message a,
+body.page-node-edit.node-type-competition-entry .droppable-message a{
+  color: #999999;
+  text-decoration: underline;
+}
+body.page-node-add-competition-entry .droppable-message a:hover,
+body.page-node-edit.node-type-competition-entry .droppable-message a:hover{
+  text-decoration: none;
+}
+body.page-node-add-competition-entry .droppable-message > span,
+body.page-node-edit.node-type-competition-entry .droppable-message > span{
+  display: block;
+  float: left;
+  position: relative;
+  top: 50px;
+  left: 260px;
+}
+body.page-node-add-competition-entry .droppable-message .droppable-standard-upload,
+body.page-node-edit.node-type-competition-entry .droppable-message .droppable-standard-upload{
+  float: left;
+  margin-left: 5px;
+  position: relative;
+  top: 50px;
+  left: 260px;
+}
+
+body.page-node-add-competition-entry .field-name-field-ce-video,
+body.page-node-edit.node-type-competition-entry .field-name-field-ce-video {
+	/*width: 400px;
+	max-width: 400px;*/
+}
+
+body.page-node-add-competition-entry .field-name-body,
+body.page-node-edit.node-type-competition-entry .field-name-body {
+  clear:both;
+}
+
+#competition-entry-node-form.confirm > div > * {
+  display:none;
+}
+#competition-entry-node-form.confirm > div > #confirm {
+  display: block;
+}
+
+
+#competition-entry-node-form .group-basicinfoleft{
+  float: left;
+  clear: both;
+  width: 50%;
+}
+#competition-entry-node-form .group-basicinforight{
+  float:left;
+  width: 50%;
+  clear:none;
+}
+#competition-entry-node-form .group-basicinfoleft,
+#competition-entry-node-form .group-basicinforight{ 
+  padding: 0;
+  border:none;
+  margin:0;
+}
+#competition-entry-node-form .group-basicinfoleft legend,
+#competition-entry-node-form .group-basicinforight legend{ 
+  display:none;
+}
+#competition-entry-node-form .group-basicinfoleft .form-item .form-item,
+#competition-entry-node-form .group-basicinforight .form-item .form-item{
+  margin:0;
+} 
+
+body.page-node-edit.node-type-competition-entry .zone-content-top,
+body.page-node-add-competition-entry .zone-content-top,
+body.node-type-competition-entry .zone-content-top,
+body.page-node-entriesmap .zone-content {
+  padding-top: 25px;
+}
+
+body.page-node-edit.node-type-competition-entry .zone-content-top .competition-title,
+body.page-node-add-competition-entry .zone-content-top .competition-title,
+body.node-type-competition-entry .zone-content-top .competition-title {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+#competition-entry-node-form .field-name-field-ce-locations h3 {
+  margin-bottom: 10px;
+}
+#competition-entry-node-form #edit-field-ce-locations li {
+  width: 50%;
+  float: left;
+  margin: 0;
+  padding-left: 0;
+}
+#competition-entry-node-form #edit-field-ce-locations li fieldset {
+  border:none;
+}
+#competition-entry-node-form #edit-field-ce-locations li fieldset .fieldset-description {
+  height: 45px;
+}
+
+#competition-entry-node-form .form-type-checkboxes .form-checkboxes,
+#competition-entry-node-form .form-type-radios .form-radios {
+  padding-top: 10px;
+}
+#competition-entry-node-form .form-type-checkboxes .form-checkboxes > div.form-item,
+#competition-entry-node-form .form-type-radios .form-radios > div.form-item {
+  float: left;
+  width: 33%;
+}
+#competition-entry-node-form .field-name-field-ce-scaling-strategy .form-checkboxes > div.form-item {
+  float: none;
+  width: 100%;
+}
+
+#competition-entry-node-form .form-type-checkboxes .form-checkboxes > div.form-item:last-child,
+#competition-entry-node-form .form-type-radios .form-radios > div.form-item:last-child {
+  margin-bottom: 25px;
+}
+
+.node-form.node-competition_entry-form input#edit-submit,
+.node-form.node-competition_entry-form input#edit-publish{
+  padding-left:100px;
+  padding-right:100px;
+}
+
+#competition-entry-node-form .group-ce-extra-fields > fieldset {
+  clear:both;
+}
+
+/* NEW Funding field */
+#competition-entry-node-form .field-name-field-ce-funding .form-items {
+  margin-bottom: 20px;
+}
+#competition-entry-node-form .field-name-field-ce-funding .form-items .description {
+  margin-bottom: 15px;
+}
+#competition-entry-node-form .field-name-field-ce-funding .form-item {
+  margin: 1px 0;
+}
+#competition-entry-node-form .field-name-field-ce-funding .form-item .checkbox-item {
+  margin-right: 10px;
+}
+#competition-entry-node-form .field-name-field-ce-funding .form-item label {
+  float:left;
+}
+#competition-entry-node-form .field-name-field-ce-funding .form-item input.form-text {
+  margin-left: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 30px;
+  text-align: center;
+  height: 20px;
+  vertical-align: top;
+}
+/* Hide legacy Funding field */
+#competition-entry-node-form  .field-name-field-ce-financial-support {
+  display: none;
+}
+
+
+/* Competition Entry Display */
+
+.node-competition-entry .group-basicinfoleft{
+  float: left;
+  clear: both;
+  width: 50%;
+}
+.node-competition-entry .group-basicinforight{
+  float:left;
+  width: 50%;
+}
+.node-competition-entry .field-name-field-ce-video,
+.node-competition-entry .field-name-taxonomy-vocabulary-2 {
+  clear:both;
+}
+.node-competition-entry .field-name-field-ce-image {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  width: 260px;
+}
+.node-competition-entry .field-name-field-ce-image:nth-child(1n) {
+  width:auto;
+}
+.node-competition-entry .field-name-field-ce-image:nth-child(3n) {
+  margin-right:0;
+}
+
+.node-competition-entry h3.field-label {
+  clear:both;
+  margin-bottom: 0px;
+}
+.node-competition-entry div.field-label-above {
+  margin-bottom: 30px;
+  margin-top:0;
+}
+
+.node-competition-entry .field-name-field-ce-locations {
+  color:#999999;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.node-competition-entry .field-name-field-ce-locations .location{
+  margin-right: 10px;
+  border-right: 2px solid #999;
+  padding-right: 10px;
+}
+.node-competition-entry .field-name-field-ce-locations .location.last{
+  border-right:none;
+}
+.node .submitted .user-info {
+  float: left;
+  padding-top: 8px;
+}
+.node .submitted .user-info .founder {
+  font-weight: bold;
+}
+.node .entry-buttons {
+  float:right;
+  margin-top: 15px;
+}
+.node-competition-entry .field-name-taxonomy-vocabulary-2 a{
+  color:#999;
+}
+.node-competition-entry .field-name-taxonomy-vocabulary-2 {
+  margin: 25px 0;
+  padding-bottom: 20px;
+}
+.node-competition-entry ul.field-name-field-ce-financial-support {
+  margin: 0 0 30px 0;
+  padding-bottom: 20px;
+}
+.node-competition-entry ul.field-name-taxonomy-vocabulary-2 li,
+.node-competition-entry ul.field-name-field-ce-financial-support li{
+  list-style:none;
+  margin-right:10px;
+  float:left;
+}
+.node-competition-entry ul.field-name-taxonomy-vocabulary-2 li:before,
+.node-competition-entry ul.field-name-field-ce-financial-support li:before {
+  content: "• ";
+  color: #f07e42;
+}
+.node-competition-entry .entry-slider-wrapper {
+  clear:both;
+  margin-bottom: 20px;
+}
+.node-competition-entry .entry-videos-wrapper {
+  margin-bottom: 20px;
+}
+
+.node-competition-entry .competition-entry-fieldset .private-indicator{
+  font-style: italic;
+  margin-left: 15px;
+  font-weight: normal;
+}
+.node-competition-entry .scaling-strategy-wrapper {
+  clear:both;
+}
+.node-competition-entry .scaling-strategy-wrapper .field-label{
+  color: #999;
+  float: left;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+
+
+/* css tabs */
+
+.view-id-entry_top_info_tabs_for_display {
+	margin: 0 auto;
+	width: 1024px;
+}
+
+#thisisthemenu {
+	display: block;
+	height: 150px;
+	width: 100%;
+	margin: 0 auto 100px auto;
+}
+
+
+        .tabbermenu { 
+		min-height: 75px; 
+		position: relative; 
+		width: 100%; 
+		background-color: #ebebeb;
+				text-align: left;}
+
+        .tabbermenu > div { 
+		display: inline;
+			}
+
+        .tabbermenu > div > a { 
+	font-size: 0.9em;
+		margin-left: -1px; 
+		position: relative; 
+		left: 12%; 
+		text-decoration: none; 
+		color: #CCC; 
+		background: transparent; 
+		display: block; 
+		float: left; 
+		height: 30px;
+		padding: 5px 20px; 
+		border-right: 1px solid #CCC;
+			}
+
+
+        .tabbermenu > div:not(:target) > a { 
+		border-bottom: 0; 
+		background: -moz-linear-gradient(top, white, #eee); }	
+
+
+
+        .tabbermenu > div:target > a { 
+		color: #333; }	
+
+
+
+        .tabbermenu > div > div { 
+		background: white; 
+		z-index: -2; 
+		left: 0; 
+		top: 60px; 
+		bottom: 0; 
+		right: 0; 
+		padding: 20px;
+		min-height: 145px;
+		}
+	
+        .tabbermenu > div:not(:target) > div { 
+		position: absolute }
+
+        .tabbermenu > div:target > div { 
+		position: absolute; 
+		z-index: 1000; 
+		    overflow-y: scroll;
+		}
+        
+
+/* competition title and entry status at top of eahc entry page */
+
+.view-entry-top-info-tabs-for-display.view-display-id-block_comp_title {
+  background-color: #7e7e7e;
+  padding: 25px 0;
+  margin: 0;
+  width: 100%;
+}
+.view-entry-top-info-tabs-for-display.view-display-id-block_comp_title .field-content.competition-title {
+  font-size: 28pt;
+}
+.view-entry-top-info-tabs-for-display.view-display-id-block_comp_title .field-content.competition-title a {
+  color: #fff;
+  font-weight: bold;
+}
+.view-entry-top-info-tabs-for-display.view-display-id-block_entry_status {
+  background-color: #f06d50;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 3px 0;
+  margin: 0;
+  width: 100%;
+}
+.view-entry-top-info-tabs-for-display.view-display-id-block_entry_status .view-content {
+  padding-left: 20px;
+}
+
+
+/* Eligibility Questions on Entry Form - PROBABLY NOT USED */
+
+#edit-eligibility-requirements {
+	border: 1px dotted #333;
+	width: 95%;
+	margin: 5px auto;
+	padding: 5px;
+}
+
+#edit-eligibility-requirements-allow {
+	background-color: #CCC;
+	color: #000;
+	font-weight: bold;
+	margin: 5px auto;
+	padding: 5px;
+}
+
+#edit-eligibility-requirements-disallow {
+	background-color: #F00;
+	color: #FFF;
+	font-weight: bold;
+	margin: 5px auto;
+	padding: 5px;
+}
+
+
+/* PRINT VERSION */
+.print-content {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 0.95em;
+}
+
+.print-content .group-projectsummary {
+display: block;
+clear: both;
+margin: 10px auto;
+width: 90%;
+border: 2px solid #CCC;
+  }
+
+.print-content .entry-videos-wrapper,
+.print-content .entry-slider-wrapper {
+  display: none;
+}
+

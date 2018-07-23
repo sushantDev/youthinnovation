@@ -1,0 +1,284 @@
+/*
+********************************************************************************************************************************************
+********************************************************************************************************************************************
+All Rights Reserved, Muwakaba © 2016
+http://www.muwakaba.com
+********************************************************************************************************************************************
+********************************************************************************************************************************************
+*/
+
+
+/*Configuration can be done in the end of this file. :)*/
+.mkcr-full{
+    height:100%;
+    width:100%;
+}
+.mkcr-circle
+{
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.mkcr-main_holder *{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+.mkcr-main_holder{
+    position: relative;
+    
+    /*
+    height: 200px;
+    width: 200px;  */
+    
+    overflow: hidden;
+}
+.mkcr-mask
+{
+    position: absolute;
+    height:70%;
+    width:70%;
+    top: 15%;
+    left: 15%;
+    background-color: #f0f0f0;
+}
+.mkcr-arc
+{
+    height: 50%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+    position: absolute;
+
+    /*background-color: #666;*/
+}
+.mkcr-main_holder > .mkcr-arc:nth-child(2)
+{
+    /*background-color: red;*/
+    -webkit-transform: rotate(0deg) skewx(20deg);
+    -moz-transform: rotate(0deg) skewx(20deg);
+    -ms-transform: rotate(0deg) skewx(20deg);
+    -o-transform: rotate(0deg) skewx(20deg);
+    transform: rotate(0deg) skewx(20deg);
+}
+.mkcr-main_holder > .mkcr-arc:nth-child(3)
+{
+    -webkit-transform: rotate(72deg) skewx(20deg);
+    -moz-transform: rotate(72deg) skewx(20deg);
+    -ms-transform: rotate(72deg) skewx(20deg);
+    -o-transform: rotate(72deg) skewx(20deg);
+    transform: rotate(72deg) skewx(20deg);
+}
+.mkcr-main_holder > .mkcr-arc:nth-child(4)
+{
+    -webkit-transform: rotate(144deg) skewx(20deg);
+    -moz-transform: rotate(144deg) skewx(20deg);
+    -ms-transform: rotate(144deg) skewx(20deg);
+    -o-transform: rotate(144deg) skewx(20deg);
+    transform: rotate(144deg) skewx(20deg);
+}
+.mkcr-main_holder > .mkcr-arc:nth-child(5)
+{
+    -webkit-transform: rotate(216deg) skewx(20deg);
+    -moz-transform: rotate(216deg) skewx(20deg);
+    -ms-transform: rotate(216deg) skewx(20deg);
+    -o-transform: rotate(216deg) skewx(20deg);
+    transform: rotate(216deg) skewx(20deg);
+}
+.mkcr-main_holder > .mkcr-arc:nth-child(1)
+{
+    -webkit-transform: rotate(288deg) skewx(20deg);
+    -moz-transform: rotate(288deg) skewx(20deg);
+    -ms-transform: rotate(288deg) skewx(20deg);
+    -o-transform: rotate(288deg) skewx(20deg);
+    transform: rotate(288deg) skewx(20deg);
+}
+.mkcr-canvas
+{
+    z-index: 10;
+    position: absolute; 
+    left:0;
+    top:0;
+    pointer-events:none;
+}
+.mkcr-svg
+{
+    position: absolute;
+    left:0;
+    top:0;
+    pointer-events:none;
+}
+
+/*
+.rotate
+{        
+    -webkit-animation: rotate 2s ease-in-out infinite;
+    -moz-animation: rotate 2s ease-in-out infinite;
+    -ms-animation: rotate 2s ease-in-out infinite;
+    -o-animation: rotate 2s ease-in-out infinite;
+        animation: rotate 2s ease-in-out infinite;
+}
+@-o-keyframes rotate
+{
+    from
+    {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@-ms-keyframes rotate
+{
+    from
+    {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotate
+{
+    from
+    {
+        
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate
+{
+    from
+    {
+        
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@keyframes rotate
+{
+    from
+    {
+        
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+*/
+
+
+
+
+/*Config*/
+.mkcr-main_holder
+{
+    /*Change width and height here to scale.*/
+    /*
+    height: 200px;
+    width: 200px;   */
+    
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+}
+.mkcr-mask
+{
+
+
+    /*Change width, height, top,left here to adjust thickness of arcs .*/
+    /* Width+(2*Left)=100% */
+    /* Height+(2*Right)=100% */
+    /* Change background color to suite what's beneath this */
+    height:70%;
+    width:70%;
+    top: 15%;
+    left: 15%;
+    background-color: #f0f0f0;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    
+    
+    /* to make the whole ARC responsive to events in Safari */
+    pointer-events:none;
+
+    
+}
+.arc
+{    
+    /*Default color for all arcs*/
+    /*background-color: gray;*/
+}
+/*Customize other arcs if you want*/
+
+.arc:hover
+{
+    /*background-color: greenyellow;*/
+}

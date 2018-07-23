@@ -1,0 +1,460 @@
+/*TODO: check and fix this styles*/
+.node-form .fivestar-form-item.overall-rating,
+.node-form .review-rating {
+  float: left;
+}
+.node-form .review-rating {
+  margin-bottom: 30px;
+}
+.node-form .fivestar-form-item .form-item {
+  float: left;
+  border: 1px solid #888;
+  background-color:#f7f5f5;
+  padding: 1px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.node-form .fivestar-form-item label {
+  float: left;
+  font-size: 14px;
+  margin: 8px 10px 5px 5px;
+}
+.node-form .fivestar-form-item .fivestar-widget{
+  float:left;
+  margin: 7px 5px 5px 0px;
+}
+.node-form .fivestar-form-item .description {
+  float:left;
+  width:15px;
+  height:15px;
+}
+.node-form .qtip-link {
+  /*background: url("../changeshops/changemakers_dashboard/images/icon-help.png") 0 0 no-repeat;*/
+  min-height: 18px;
+  min-width: 18px;
+}
+.node-form .fivestar-form-item .description .fivestar-first-explanation,
+.node-form .fivestar-form-item .description .fivestar-last-explanation {
+  position: absolute;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.node-form .fivestar-form-item .description .fivestar-first-explanation {
+  left: 70px;
+}
+.node-form .fivestar-form-item .description .fivestar-last-explanation {
+  left: 145px;
+}
+.node-form .fivestar-form-item .form-item#edit-finalist-wrapper {
+  padding-bottom: 11px;
+}
+
+.node-form .area-title {
+  margin-top: 15px;
+}
+.node-form .area-title h1 {
+  float: left;
+  margin: 15px 5px 17px 0;
+}
+.node-form .area-title .qtip-link {
+  float: left;
+  margin-top: 15px;
+}
+.node-form .area-icon {
+  background-color: #c3c3c3;
+  float: right;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: #fff;
+}
+.node-form .area-icon .icon {
+  width: 200px;
+  text-align: center;
+  padding: 15px 0;
+}
+.node-form .area-icon.private .icon {
+  background: url("../images/icon_private.png") 50px 13px no-repeat;
+}
+.node-form .area-icon.public .icon {
+  background: url("../images/icon_public.png") 50px 13px no-repeat;
+}
+.node-form .area-icon .arrow {
+  border-top: 25px solid #fff;
+  border-bottom: 25px solid #fff;
+  border-right: 50px solid #c3c3c3;
+  float: left;
+}
+
+.node-form .quick-tips {
+  padding-top: 3px;
+  padding-left:0;
+  border:none;
+}
+.node-form .quick-tips .fieldset-wrapper {
+  background-color: #f7f5f5;
+  border: 1px solid #888;
+}
+.node-form .quick-tips .fieldset-wrapper,
+.node-form .quick-tips .fieldset-wrapper > div {
+  float:left;
+}
+.node-form .quick-tips .fieldset-wrapper .field-type-taxonomy-term-reference .form-checkboxes {
+  margin-top:10px;
+}
+.node-form .quick-tips .fieldset-wrapper .field-name-taxonomy-vocabulary-14 .form-checkboxes .form-item label {
+  float: left;
+  height: 10px;
+  width: 280px;
+  margin-left: 15px;
+}
+.node-form .quick-tips .fieldset-wrapper .field-name-taxonomy-vocabulary-14 > div > label {
+  text-align:right;
+}
+.node-form .quick-tips .fieldset-wrapper .field-name-taxonomy-vocabulary-14 .form-checkboxes .form-item input {
+  width:80px;
+}
+.node-form .quick-tips .fieldset-wrapper .field-name-taxonomy-vocabulary-15 {
+  width: 150px;
+  text-align: center;
+}
+.node-form .quick-tips .fieldset-wrapper .field-name-taxonomy-vocabulary-15 .form-checkboxes .form-item label {
+  display:none;
+}
+.node-form .quick-tips .terms-info ul {
+  margin-top: 57px;
+  margin-bottom: 7px;
+}
+.node-form .quick-tips .terms-info li {
+  list-style: none;
+  display: block;
+  height: 20px;
+  line-height: 1em;
+}
+.node-form .quick-tips .terms-info .qtip-link  {
+  min-height: 15px;
+  margin-left: 7px;
+}
+.node-form .quick-tips .terms-info .term-name {
+  vertical-align: bottom;
+}
+.node-form .quick-tips .fieldset-wrapper > div.form-item{
+  width: 100px;
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+}
+.node-form .quick-tips .form-item label{
+  height: 37px;
+  line-height: 1.3em;
+}
+.node-form .quick-tips .form-item .form-checkboxes > .form-item {
+  margin: 0 0 7px 0;
+  height: 17px;
+}
+.node-form .quick-tips .fieldset-wrapper .quick-tips-reset {
+  float: none;
+  text-align: right;
+  margin-right: 15px;
+  margin-bottom: 3px;
+}
+.node-form .quick-tips .quick-tips-reset a {
+  color: #f07e42;
+  text-decoration: underline;
+}
+.node-form .quick-tips .quick-tips-reset a:hover,
+.node-form .quick-tips .quick-tips-reset a:active {
+  text-decoration: none;
+}
+
+.node-form .sample-feedback a {
+  color:#2980b9;
+  text-decoration: underline;
+}
+.node-form .sample-feedback a:hover,
+.node-form .sample-feedback a:active {
+  text-decoration: none;
+}
+
+.node-form input.default-value,
+.node-form textarea.default-value {
+  color: #8a8a8a;
+}
+.edit-field-review-personal-feedback-0-wrapper {
+  margin-bottom: 30px;
+  clear:both;
+}
+.edit-field-review-personal-feedback-0-wrapper h1 {
+  float:left;
+  margin-right: 5px;
+}
+.node-form #edit-entry-comments-wrapper-wrapper {
+  margin-top: 15px;
+  float: left;
+}
+.node-form.review-node-form #edit-field-review-personal-feedback-0-value-wrapper label,
+.node-form #edit-entry-comments-wrapper-wrapper label {
+  font-size: 180%;
+  font-weight: bold;
+}
+.node-form #edit-entry-comments-wrapper-wrapper label a.copy-private-feedback{
+  font-size: 13px;
+  font-weight: normal;
+  color: #F07E42;
+  text-decoration: underline;
+}
+.node-form #edit-entry-comments-wrapper-wrapper label a.copy-private-feedback:hover,
+.node-form #edit-entry-comments-wrapper-wrapper label a.copy-private-feedback:active{
+  text-decoration: none;
+}
+.node-form .form-textarea{
+  margin-top:10px;
+  padding: 5px;
+}
+.node-form .form-text{
+  padding: 0 5px;
+}
+.node-form .form-textarea,
+.node-form .form-text{
+  border: 1px solid #888;
+}
+
+.node-form .review-rating,
+.node-form .fivestar-form-item.overall-rating,
+.node-form .form-textarea {
+  width: 700px;
+}
+
+#edit-suggest-connection-wrapper label {
+  float: left;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.node-form #edit-suggest-connection {
+  width: 400px;
+}
+
+.node-form .sample-feedback {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+}
+.node-form .sample-feedback img{
+  border: 4px solid #eaeaea;
+  margin-bottom: 5px;
+}
+
+.node-form .form-actions {
+  text-align:right;
+}
+.node-form input.form-submit,
+.node-form a.review-btn{
+  z-index: 10059;
+  border-width: 0px;
+  border-radius: 15px;
+  -o-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-color: #dddddd;
+  border-style: outset;
+  background-color: #e67e22;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Arial;
+  text-align: center;
+  behavior: url(https://www.changemakers.com/css/PIE.htc);
+  width: 120px;
+  height: 30px;
+  background-image: linear-gradient(bottom, #e67e22 0%, #ff9729 100%);
+  background-image: -o-linear-gradient(bottom, #e67e22 0%, #ff9729 100%);
+  background-image: -moz-linear-gradient(bottom, #e67e22 0%, #ff9729 100%);
+  background-image: -webkit-linear-gradient(bottom, #e67e22 0%, #ff9729 100%);
+  background-image: -ms-linear-gradient(bottom, #e67e22 0%, #ff9729 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  margin-bottom: 20px;
+  padding: 0.7em;
+}
+.node-form .text-info a.review-btn{
+  color: #fff;
+  text-decoration: none;
+  float: none;
+  padding: 7px 30px;
+}
+
+.node-form .text-info {
+  font-size: 1.2em;
+}
+.node-form .text-info a{
+  color: #e67e22;
+  text-decoration: underline;
+}
+.node-form .text-info a:hover,
+.node-form .text-info a:active{
+  text-decoration: none;
+}
+
+#competition-entry-review-node-form .group-review-admin {
+  display:none;
+}
+
+.node-form .hidden {
+  display: none;
+}
+
+.review-node-form .node-form fieldset legend{font-size:16px;}
+.review-node-form .node-form fieldset legend a{/* color:white;*/}
+.review-node-form .node-form fieldset{border:none;}
+.review-node-form #edit-taxonomy-14-wrapper,#edit-taxonomy-15-wrapper {float:left;}
+.review-node-form #edit-taxonomy-tags-4-wrapper{clear:both;}
+.review-node-form .body-field-wrapper{display:none;}
+.review-node-form a.copynotes{color:#f07e42;}
+.node-form.review-node-form .form-item label {font-size: 1.3em;}
+
+h1.title {
+  color: #e67e22;
+}
+
+
+
+/* Feedback form - block on the entry view page*/
+#block-competition-entry-review-project-feedback-form {
+  padding: 30px 15px;
+  background: #efebdf;
+  border: 1px solid #e2e2e2;
+}
+#block-competition-entry-review-project-feedback-form .block-title {
+  border: none;
+  background: url("../images/give-feedback.png") center top no-repeat;
+  padding-top: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+#competition-entry-review-project-feedback-form-wrapper .feedback-description {
+  text-align: center;
+  font-size: 0.85em;
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
+#competition-entry-review-project-feedback-form-wrapper label {
+  border-bottom: 1px solid #666666;
+  line-height: 2em;
+  margin-bottom: 10px;
+}
+#competition-entry-review-project-feedback-form-wrapper .ratings .form-item label {
+  float: left;
+  width: 100px;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-left: 14px;
+  font-weight: normal;
+}
+#competition-entry-review-project-feedback-form-wrapper .ratings .form-item.form-item-finalist label {
+  padding-left: 0;
+}
+#competition-entry-review-project-feedback-form-wrapper .ratings .form-item .form-item.form-type-select {
+  margin-top: 6px;
+  width: 100px;
+  float: right;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+#competition-entry-review-project-feedback-form-wrapper .ratings .fivestar-form-item {
+  border-bottom: 1px solid #c7c4ba;
+}
+#competition-entry-review-project-feedback-form-wrapper .form-required {
+  float: left;
+  margin-right: 5px;
+  vertical-align: bottom;
+  line-height: 1em;
+  margin-top: 8px;
+  font-size: 16px;
+  color: #ef6d4f;
+}
+#competition-entry-review-project-feedback-form-wrapper .form-item input.form-text, 
+#competition-entry-review-project-feedback-form-wrapper .form-item textarea.form-textarea {
+  border: 1px solid #d7d3c8;
+  font-size: 0.85em;
+}
+
+#competition-entry-review-project-feedback-form-wrapper .quick-tips-table,
+#competition-entry-review-project-feedback-form-wrapper .quick-tips-table tr,
+#competition-entry-review-project-feedback-form-wrapper .quick-tips-table tr th,
+#competition-entry-review-project-feedback-form-wrapper .quick-tips-table tr td,
+#competition-entry-review-project-feedback-form-wrapper .quick-tips-table tbody {
+  border: none;
+  background:none;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.3em;
+  text-align: center;
+  vertical-align:middle;
+}
+#competition-entry-review-project-feedback-form-wrapper .quick-tips-table tr td.term-name {
+  text-align: left;
+  padding: 4px 0;
+}
+
+#competition-entry-review-project-feedback-form-wrapper input.form-submit {
+  margin-top: 15px;
+  padding: 10px 30px 8px;
+}
+.competition-entry-review-project-feedback-form .fivestar-widget.error {
+  background-image:none;
+}
+#competition-entry-review-project-feedback-form-wrapper .reviewdashboard-button-wrapper {
+  margin-top:15px;
+}
+#competition-entry-review-project-feedback-form-wrapper a.reviewdashboard-button {
+  background: #e6624d url(../../../../themes/velocity/images/bg-button.png) 0 0 repeat-x; 
+  border: 1px solid #c94e3a; 
+  color: #fff; 
+  padding: 0.8em 1.5em; 
+  margin: 5px; 
+  border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px; 
+  text-shadow: none; 
+  font-size: 90%; 
+  text-transform: uppercase; 
+  font-weight:bold;
+}
+#edit-internal-notes {
+  clear:both;
+}
+
+
+/* Modal window styles */
+div.ctools-modal-content {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+}
+div.ctools-modal-content .modal-header {
+  padding: 10px .25em 0 1em;
+  background-color: #2697a4;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.ctools-modal-content .modal-header .close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.ctools-modal-content .feedback-modal-message {
+  text-align: center;
+  margin-top: 80px;
+  text-transform: none;
+  line-height: 2em;
+}
+.ctools-modal-content .back-btn-wrapper {
+  text-align: center;
+}

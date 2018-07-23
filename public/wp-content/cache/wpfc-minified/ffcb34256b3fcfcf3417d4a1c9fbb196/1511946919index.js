@@ -1,0 +1,2341 @@
+!(function($){
+"use strict";
+jQuery(document).ready(function($){
+function BearsthemeBackTop(){
+$('#bt-backtop').on('click', function(){
+$('html,body').animate({
+scrollTop:0
+}, 400);
+return false;
+});if($(window).scrollTop() > 300){
+$('#bt-backtop').addClass('bt-show');
+}else{
+$('#bt-backtop').removeClass('bt-show');
+}
+$(window).on('scroll', function(){
+if($(window).scrollTop() > 300){
+$('#bt-backtop').addClass('bt-show');
+}else{
+$('#bt-backtop').removeClass('bt-show');
+}});}
+BearsthemeBackTop();
+function BearsthemeDatePicker(){
+if($('.ro-date-picker').length){
+$('.ro-date-picker').datepicker();
+}}
+BearsthemeDatePicker();
+var $window=$(window);
+var mainMenuHeight=$('#bt-main-menu').height();
+function BearsthemeEasingMoving(){
+var $root=$('html, body');
+$('.bt-demo-select').on('click', function(){
+var href=$.attr(this, 'href');
+$root.animate({
+scrollTop:($(href).offset().top - mainMenuHeight)
+}, 500, function(){
+window.location.hash=href;
+});return false;
+});}
+BearsthemeEasingMoving();
+function Bearsthemeheadervideo(){
+$("#bt-play-button").on("click", function(e){
+e.preventDefault();
+$.fancybox({
+'padding':0,
+'autoScale':false,
+'transitionIn':'none',
+'transitionOut':'none',
+'title':this.title,
+'width':720,
+'height':405,
+'href':this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+'type':'swf',
+'swf':{
+'wmode':'transparent',
+'allowfullscreen':'true'
+}});});}
+Bearsthemeheadervideo();
+function BearsthemeOpenMiniSearchSidebar(){
+$('.bt-share-search-icon > li > a.search-icon').on('click', function(){
+$('#bt_header .widget_search').toggle();
+});}
+BearsthemeOpenMiniSearchSidebar()
+function BearsthemeOpenMiniSocialShareSidebar(){
+$('.bt-share-search-icon > li > a.share-icon').on('click', function(){
+$('#bt_header .bt-social-share').toggle();
+});}
+BearsthemeOpenMiniSocialShareSidebar();
+function BearsthemeOpenMiniCartSidebar(){
+$('.bt_widget_mini_cart .bt-cart-header > a.bt-icon').on('click', function(){
+$('.bt_widget_mini_cart .bt-cart-content').toggle();
+});}
+BearsthemeOpenMiniCartSidebar();
+function BearsthemeOpenMenuSidebar(){
+$('.bt-menu-sidebar > a').on('click', function(){
+$('body').toggleClass('bt-menu-canvas-open');
+});$('.bt-menu-canvas-overlay').on('click', function(){
+$('body').toggleClass('bt-menu-canvas-open');
+});}
+BearsthemeOpenMenuSidebar();
+function BearsthemesMobileMenuDropdown(){
+var hasChildren=$('.bt-header-menu .bt-menu-list ul li.menu-item-has-children, .header-menu-wrap #main-menu-selector li.menu-item-has-children, .main-header-wrap .menu-wrap .menu-container .bearsthemes-menu-style #main-menu-selector li.menu-item-has-children');
+hasChildren.each( function(){
+var $btnToggle=$('<span class="mb-dropdown-icon hidden-lg hidden-md" href="#"></span>');
+$( this).append($btnToggle);
+$btnToggle.on( 'click', function(e){
+e.preventDefault();
+$( this).toggleClass('open');
+$( this).parent().children('ul').toggle('slow'); 
+});
+});
+$(window).on('resize', function(){
+hasChildren.each( function(){
+$( this).children('ul').removeAttr( 'style');
+$( this).children('.mb-dropdown-icon').removeClass( 'open');
+});
+});}
+BearsthemesMobileMenuDropdown();
+function BearsthemeOpenMenu(){
+var $btnHamburger=$( '#bt-hamburger');
+$btnHamburger.on('click', function( e){
+e.preventDefault();
+$( 'body').toggleClass( 'menumobi_active');
+$( '.bt-menu-list').toggleClass('hidden-xs hidden-sm is_menumobi_active');
+});}
+BearsthemeOpenMenu();
+function BearsthemeHeaderStick(){
+if($( '.bt-header-v1, .bt-header-v3').hasClass( 'bt-header-stick')){
+var header_offset=$('#bt_header .bt-header-menu').offset();
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}
+$(window).on('scroll', function(){
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}});$(window).on('load', function(){
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}});$(window).on('resize', function(){
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}});}}
+BearsthemeHeaderStick();
+function BearsthemeHeaderFixed(){
+if($( '.bt-header-v2').hasClass( 'bt-header-fixed')){
+var header_offset=$('#bt_header .bt-header-menu').offset();
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}
+$(window).on('scroll', function(){
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}});$(window).on('load', function(){
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}});$(window).on('resize', function(){
+if($(window).scrollTop() > header_offset.top){
+$('body').addClass('bt-stick-active');
+}else{
+$('body').removeClass('bt-stick-active');
+}});}}
+BearsthemeHeaderFixed();
+function BearsthemeDonatersCarousel(){
+var $owlElem=$('.bt-donaters-carousel .owl-carousel');
+$owlElem.each( function(){
+var $this=$( this),
+opts={
+loop:true,
+smartSpeed:500,
+margin:30,
+navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+dots:false,
+responsiveClass:true,
+responsive:{
+0:{
+items:1,
+},
+768:{
+items:2,
+},
+992:{
+items:3,
+},
+1200:{
+items:3,
+nav:true,
+}}
+};
+var owlObj=$this.owlCarousel( opts);
+$( window).resize( function(){
+setTimeout( function(){
+owlObj.trigger('destroy.owl.carousel');
+owlObj.html(owlObj.find('.owl-stage-outer').html()).removeClass('owl-loaded');
+owlObj.owlCarousel(opts);
+}, 100)
+})
+})
+}
+BearsthemeDonatersCarousel();
+function BearsthemeDonationSlider(){
+$('.tbdonations_slider_wrap .owl-carousel').owlCarousel({
+items:1,
+loop:true,
+smartSpeed:500,
+margin:30,
+nav:true,
+navText:['<i class="icon-arrow-left"></i>', '<i class="icon-arrow-right"></i>'],
+dots:false
+});}
+BearsthemeDonationSlider();
+function BearsthemeEventsCarousel(){
+$('.bt-events_slider .owl-carousel').owlCarousel({
+items:1,
+loop:true,
+smartSpeed:500,
+nav:true,
+navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+dots:false
+});}
+BearsthemeEventsCarousel();
+function BearsthemeTestimonialSlider(){
+$('.bt-testimonial-slider  .owl-carousel').owlCarousel({
+items:1,
+loop:true,
+smartSpeed:500,
+margin:30,
+nav:false,
+navText:['<i class="icon-arrow-left"></i>', '<i class="icon-arrow-right"></i>'],
+dots:true
+});}
+BearsthemeTestimonialSlider();
+function BearsthemesBlogSpecial(){
+$('.bt-blog-special').each(function(){
+var $btPost=$(this).find('.bt-post .bt-post-items'),
+$btPostDetail=$(this).find('.bt-post-detail');
+$btPost.children('article').hover(function(){
+var _index=$(this).index();
+$(this).addClass('active').siblings().removeClass('active');
+$btPostDetail
+.children('article')
+.eq(_index)
+.addClass('active')
+.siblings()
+.removeClass('active');
+})
+})
+}
+BearsthemesBlogSpecial();
+function BearsthemesStorySpecial(){
+$('.bt-story-special').each(function(){
+var $btPost=$(this).find('.bt-post'),
+$btPostDetail=$(this).find('.bt-story-items');
+$btPost.children('article').hover(function(){
+var _index=$(this).index();
+$(this).addClass('active').siblings().removeClass('active');
+$btPostDetail
+.children('article')
+.eq(_index)
+.addClass('active')
+.siblings()
+.removeClass('active');
+})
+})
+}
+BearsthemesStorySpecial();
+function BearsthemesEventSpecial(){
+$('.bt-events-special').each(function(){
+var $btPost=$(this).find('.tribe_events');
+$('.bt-events-special .tribe_events').hover(function(){
+$(this).addClass('active').siblings().removeClass('active');
+})
+})
+}
+BearsthemesEventSpecial();
+function BearsthemeBlogCarousel(){
+$('.bt-blog-carousel .owl-carousel').owlCarousel({
+loop:true,
+smartSpeed:500,
+margin:30,
+nav:false,
+dots:true,
+responsiveClass:true,
+responsive:{
+0:{
+items:1,
+},
+768:{
+items:1,
+},
+992:{
+items:2,
+},
+1200:{
+items:2,
+}}
+});}
+BearsthemeBlogCarousel();
+function BearsthemeCountDownClock(){
+$('.bt-countdown-clock').each(function(){
+var countdownTime=$(this).attr('data-countdown');
+$(this).countdown({
+until:countdownTime,
+format:'ODHMS',
+padZeroes:true
+});});}
+BearsthemeCountDownClock();
+function BearsthemeCountUp(){
+if($( ".bt-number").length > 0){
+$('.bt-number').counterUp({
+delay:10,
+time:1000
+});}}
+BearsthemeCountUp();
+$('#map').addClass('scrolloff');
+$('.overlay_map').on("mouseup",function(){
+$('#map').addClass('scrolloff'); 
+});$('.overlay_map').on("mousedown",function(){
+$('#map').removeClass('scrolloff');
+});$("#map").mouseleave(function (){ 
+$('#map').addClass('scrolloff');
+});$('.woocommerce-info .ro-checkout-title > a').on('click', function(event){
+$( event.target).closest('.woocommerce-info').toggleClass('ro-active');
+});function eventToggleHandle(){
+var $el=$( '.tb-event-segment');
+$el.each( function(){
+var $this=$( this),
+$btnToggle=$( '<span class="btn-event-toggle"><i class="fa fa-minus"></i></span>');
+$this.prepend( $btnToggle);
+$btnToggle.on( 'click', function(){
+$this.toggleClass( 'minus');
+$( this).find( 'i').toggleClass( 'fa-minus fa-plus');
+})
+})
+}
+eventToggleHandle();
+});})(jQuery);
+!( function( $){
+'use strict';
+var main_api=function(){
+this.init();
+}
+main_api.prototype={
+init:function(){
+this.stickyMenu();
+this.mobiMenuHandle();
+this.comboWidgets();
+this.chariableDonateAjaxLoadform();
+this.eventManagerBookingAjaxLoadform();
+this.counterHandle();
+this.menuOffCanvasHandle();
+var self=this;
+$( window).load( function(){
+self.svgProgressHandle();
+self.masonryHandle();
+})
+},
+stickyMenu:function(){
+$( '[data-sticky-menu]').each( function(){
+var $this=$( this),
+infoEl={ top:$this.offset().top, height:$this.innerHeight() },
+scrollTop=0;
+$( window).on( {
+'scroll.stickyMenu':function(){
+scrollTop=$( this).scrollTop();
+if(scrollTop >=( infoEl.top + infoEl.height)){
+$this.addClass( 'sticky-menu');
+}else{
+$this.removeClass( 'sticky-menu');
+}}
+})
+})
+},
+mobiMenuHandle:function(){
+var self=this;
+$( '.btn-toggle-menu-mobi').each( function(){
+var $this=$( this),
+$selectorElem=$( '#bt_main_header .bearsthemes-menu-style');
+$this.on( 'click', function( e){
+e.preventDefault();
+$( 'body').toggleClass( 'menumobi_active');
+$selectorElem.toggleClass( 'is_menumobi_active');
+});
+});
+},
+menuOffCanvasHandle:function(){
+var self=this;
+self.menuOffCanvasHandle.addButtonToggle=function( $elem){
+$elem.find( '.menu-item-has-children').each( function(){
+var $this=$( this),
+$btnToggle=$( '<span>', { class:'menu-item-button-toggle', html:'<i>+</i>' });
+$this.append( $btnToggle);
+$btnToggle.on( 'click', function( e){
+e.stopPropagation();
+var $this=$( this);
+$this.toggleClass( 'is-open');
+$this.parent().children( 'ul.sub-menu').toggle( 'slow');
+})
+})
+}
+self.menuOffCanvasHandle.header_v8=function(){
+var $menuWrap=$( '.btwg-container-menu-off-canvas.temp-header-header-v8 .widget_nav_menu .menu');
+self.menuOffCanvasHandle.addButtonToggle( $menuWrap);
+}
+self.menuOffCanvasHandle.header_v8();		
+},
+comboWidgets:function(){
+var self=this;
+$( '.widget_bt_combowigets').on( 'click', '.btwg-icon', function( e){
+e.preventDefault();
+var $this=$( this),
+container_class=$this.data( 'container');
+setTimeout( function(){
+$( container_class).toggleClass( 'is-open');
+$( 'html').toggleClass( container_class.replace( '.', '') + '-open');
+if(! $( container_class).hasClass( 'is-open')){
+setTimeout( function(){
+$( window).trigger( 'resize');
+}, 600)
+}}, 10)
+})
+$( '.btwg-container-menu-off-canvas').on( 'click', function( e){
+if($( e.target).hasClass( 'is-open')){
+$( '.btwg-menu-off-canvas .btwg-icon').click();
+}})
+this.btwg_cart=function(){
+var self=this;
+this.callback=function(){
+if(! $( window).data( 'btwg_cart.minicartUpdate')){
+$( window).data( 'btwg_cart.minicartUpdate', function( obj){
+$( '.cart-data', '.btwg-cart .btwg-icon').html( obj.cart_count);
+$( '.btwg-container-cart', '.btwg-cart').html( obj.cart_template);
+})
+}}
+this.callback();
+this.updateMinicart=function(){
+$.ajax( {
+type:'POST',
+url:main_object.ajax_url,
+data:{ action:'bearsthemes_mode_minicart_update' },
+success:function( data){
+try{
+var cart_obj=JSON.parse( data);
+$( window).data( 'btwg_cart.minicartUpdate').call( this, cart_obj);
+}catch ( e){
+console.log( 'result updateMinicart:', e);
+}},
+error:function( e){
+console.log( 'updateMinicart:', e);
+}});
+}
+this.updateMinicart();
+setInterval( function(){ self.updateMinicart() }, 1000 * 30);
+$( document).ajaxComplete( function( event, xhr, ajaxOpts){
+if('data' in ajaxOpts && ( ajaxOpts.data.indexOf( 'action=empty_cart')!=-1 || ajaxOpts.data.indexOf( 'product_id')!=-1)){
+self.updateMinicart();
+}});$( document).on( 'wpsc_fancy_notification', function( event){
+self.updateMinicart();
+});}
+this.btwg_cart(); 
+this.removeProductAjax=function(){
+$( '.btwg-container-cart').on( 'click', '.remove', function( e){
+e.preventDefault();
+var $this=$( this),
+$itemWrap=$this.parent( 'li.mini_cart_item'),
+pid=$this.data( 'product_id');
+$itemWrap.addClass( 'bt-ajax-handle');
+$.ajax( {
+type:'POST',
+url:main_object.ajax_url,
+data:{ action:'bearsthemes_remove_product_minicart', product_id:pid },
+success:function( data){
+self.updateMinicart();
+},
+error:function( e){
+console.log( 'remove product ajax:', e);
+}})
+})
+}
+this.removeProductAjax();
+},
+chariableDonateAjaxLoadform:function(){
+var self=this;
+$( 'body').on( 'click.charitableAjaxLoadform', '.charitable-donate-ajax-loadform', function( e){
+e.preventDefault();
+var $this=$( this),
+campaign_id=$this.data( 'campaign-id'),
+campaign_title=$this.data( 'campaign-title'),
+campaign_img=$this.data( 'campaign-img'),
+$modal=self.bearsModal();
+$.ajax( {
+type:'POST',
+url:main_object.ajax_url,
+data:{ action:'get_donation_form', campaign_id:campaign_id },
+success:function( result){
+try{
+if(result.success!=true) return;
+$modal
+.trigger( 'buildHeader', [campaign_img, campaign_title])
+.trigger( 'updateContent', [result.data])
+.trigger( 'showContainer');
+var $form=$modal.find( '#charitable-donation-form');
+if($form.length) new CHARITABLE.Donation_Form( $form);
+} catch( e){ console.log( e) }},
+error:function( e){
+console.log( e);
+}})
+})
+},
+eventManagerBookingAjaxLoadform:function(){
+var self=this;
+self.eventManagerBookingFormHandle=function( $form, callback){
+$form.on( 'submit', function( e){
+e.preventDefault();
+var $this=$( this),
+formdata=$this.serialize();
+$this.find( '.em-booking-buttons').addClass( 'ajax-loading');
+$.ajax({
+url:main_object.ajax_url,
+data:formdata,
+dataType:'json',
+type:'POST',
+success:function( response){
+console.log(response);
+$this.parent().find( '.em-booking-message').remove();
+$this.find( '.em-booking-buttons').removeClass( 'ajax-loading');
+if(response.result && response.result==true){
+$this.before( '<div class="em-booking-message em-booking-success">'+ response.message + '</div>');
+if(response.result && typeof response.paypal_url!='undefined'){
+var ppForm=$('<form action="'+response.paypal_url+'" method="post" id="em-paypal-redirect-form"></form>');
+$.each( response.paypal_vars, function(index,value){
+ppForm.append('<input type="hidden" name="'+index+'" value="'+value+'" />');
+});ppForm.append('<input id="em-paypal-submit" type="submit" style="display:none" />');
+ppForm.appendTo('body').trigger('submit');
+}}else{
+$this.before( '<div class="em-booking-message em-booking-error">'+ response.errors +'</div>');
+}
+if(callback) callback.call( this, response)
+},
+error:function( e){
+console.log( e);
+}});})
+}
+$( 'body').on( 'click.eventManagerAjaxLoadform', '.event-manager-ajax-loadform', function( e){
+e.preventDefault();
+var $this=$( this),
+event_id=$this.data( 'event-id'),
+event_title=$this.data( 'event-title'),
+event_img=$this.data( 'event-img'),
+redirect_to=$this.data( 'redirect-to'),
+$modal=self.bearsModal();
+$.ajax( {
+type:'POST',
+url:main_object.ajax_url,
+data:{ action:'bearstheme_eventManagerBook_form', event_id:event_id },
+dataType:'json',
+success:function( result){
+try{
+$modal
+.trigger( 'buildHeader', [event_img, event_title])
+.trigger( 'updateContent', [result.data])
+.trigger( 'showContainer');
+if($modal.find( 'input[name="redirect_to"]').length > 0)
+$modal.find( 'input[name="redirect_to"]').val( redirect_to)
+self.eventManagerBookingFormHandle( $modal.find( 'form[name="booking-form"]'), function(){
+$modal.trigger( 'scrollTop');
+});
+} catch( e){ console.log( e) }},
+error:function( e){
+console.log( e)
+}})
+})
+},
+bearsModal:function( callback){
+var modal_temp='';
+modal_temp='<div class="bears-modal-wral">';
+modal_temp +='	<div class="bears-modal-container">';
+modal_temp +='		<div class="bears-modal-container-inner">';
+modal_temp +='			<a href="#!" class="close-modal"><i class="fa fa-times"></i></a>';
+modal_temp +='			<div class="modal-body"></div>';
+modal_temp +='		</div>';
+modal_temp +='	</div>';
+modal_temp +='</div>';
+var $modal_elem=$( modal_temp);
+$( 'body').addClass( 'bears-modal-is-open');
+$modal_elem.on( {
+'buildHeader':function( e, image, title){
+var header_temp='';
+header_temp +='<div class="header-modal" style="background:url('+ image +') no-repeat center center / cover, #333">';
+header_temp +='	<h3 class="title">'+ title +'</h3>';
+header_temp +='</div>';
+$modal_elem.find( '.modal-body').before( header_temp);
+},
+'showContainer':function(){ 
+$( this).addClass( 'is-show'); 
+},
+'closeModal':function(){ 
+$( this).addClass( 'is-close');
+setTimeout( function(){
+$( 'body').removeClass( 'bears-modal-is-open');
+$modal_elem.remove();
+}, 500)
+},
+'updateContent':function( e, container){
+$( this).find( '.modal-body').html( container);
+},
+'click':function( e){
+var $target=$( e.target);
+if($target.hasClass( 'bears-modal-wral')) $( this).trigger( 'closeModal')
+},
+'scrollTop':function(){
+$( this).animate( {
+scrollTop:0
+}, 200)
+}})
+$modal_elem.find( 'a.close-modal').on( 'click', function( e){
+e.preventDefault();
+$modal_elem.trigger( 'closeModal');
+})
+$( 'body').append( $modal_elem)
+if(callback) callback.call( this, $modal_elem);
+return $modal_elem;
+},
+masonryHandle:function(){
+$( '[data-bears-masonry-elem]').each( function(){
+var $this=$( this),
+opts=$this.data( 'bears-masonry-elem');
+$this.isotope({
+itemSelector:'.item',
+percentPosition:true,
+masonry:{
+columnWidth:'.grid-sizer',
+gutter:'.gutter-sizer'
+}});})
+},
+svgProgressHandle:function(){
+$( '[data-svgcircle]').each( function(){
+var $this=$( this),
+value=$this.data( 'svgcircle'),
+site=$this.data( 'size'),
+thickness=$this.data( 'thickness');
+$this.circleProgress({
+value:value / 100,
+lineCap:'round',
+thickness:thickness,
+size:site,
+emptyFill:'rgba(255, 255, 255, .2)',
+}).on('circle-animation-progress', function(event, progress, stepValue){
+$(this).attr( 'data-text', ( stepValue.toFixed(2) * 100) + '%');
+});})
+},
+counterHandle:function(){
+$( '[data-bears-counter]').counterUp( {
+delay:10,
+time:1000
+})
+}}
+function effectFadeInFadeOutWhenRedirect(){
+$(document).on("click", "a[data-smooth-link]", function (){
+var newUrl=$(this).attr("href");
+if(!newUrl || newUrl[0]==="#"){
+location.hash=newUrl;
+return;
+}
+$("html").fadeOut(function (){
+location=newUrl;
+});return false;
+});}
+$( function(){
+new main_api();
+})
+})( jQuery);
+(function($){
+"use strict";
+function tb_box_style(){
+var $linkStyle=$( 'link#bears_preset-css');
+$('.panel-primary-color').on('click', 'li', function(){
+$(this).addClass('active').siblings('.active').removeClass('active');
+var link_preset=$( this).data( 'link');
+$linkStyle.attr( 'href', link_preset);
+});$('.panel-selector-btn').on('click', function(e){
+e.preventDefault();
+$('body').removeClass('wide boxed').addClass( $(this).data('value'));
+$(this).addClass('active').siblings('.active').removeClass('active');
+setTimeout( function(){
+$( window).trigger( 'resize');
+}, 100);
+});$('.panel-primary-background').on('click','li', function(){
+var link_bg=$( this).data( 'link');
+$('body').addClass('bg-pattern-body').css('background-image', 'url('+ link_bg +')');
+$(this).addClass('active').siblings('.active').removeClass('active');
+});$('#panel-selector-reset').on('click', function(e){
+e.preventDefault();
+$( this).parents( '#panel-style-selector').find( '.default').trigger( 'click');
+$( this).parents( '#panel-style-selector').find( '[data-value="wide"]').trigger( 'click');
+});$('.panel-selector-open').on('click', function(){
+$(this).parent().toggleClass('in');
+})
+}
+$(document).ready( function(){
+tb_box_style();
+})
+})(window.jQuery);
+;(function($, window, document, undefined){
+var drag, state, e;
+drag={
+start:0,
+startX:0,
+startY:0,
+current:0,
+currentX:0,
+currentY:0,
+offsetX:0,
+offsetY:0,
+distance:null,
+startTime:0,
+endTime:0,
+updatedX:0,
+targetEl:null
+};
+state={
+isTouch:false,
+isScrolling:false,
+isSwiping:false,
+direction:false,
+inMotion:false
+};
+e={
+_onDragStart:null,
+_onDragMove:null,
+_onDragEnd:null,
+_transitionEnd:null,
+_resizer:null,
+_responsiveCall:null,
+_goToLoop:null,
+_checkVisibile:null
+};
+function Owl(element, options){
+this.settings=null;
+this.options=$.extend({}, Owl.Defaults, options);
+this.$element=$(element);
+this.drag=$.extend({}, drag);
+this.state=$.extend({}, state);
+this.e=$.extend({}, e);
+this._plugins={};
+this._supress={};
+this._current=null;
+this._speed=null;
+this._coordinates=[];
+this._breakpoint=null;
+this._width=null;
+this._items=[];
+this._clones=[];
+this._mergers=[];
+this._invalidated={};
+this._pipe=[];
+$.each(Owl.Plugins, $.proxy(function(key, plugin){
+this._plugins[key[0].toLowerCase() + key.slice(1)]=new plugin(this);
+}, this));
+$.each(Owl.Pipe, $.proxy(function(priority, worker){
+this._pipe.push({
+'filter':worker.filter,
+'run':$.proxy(worker.run, this)
+});}, this));
+this.setup();
+this.initialize();
+}
+Owl.Defaults={
+items:3,
+loop:false,
+center:false,
+mouseDrag:true,
+touchDrag:true,
+pullDrag:true,
+freeDrag:false,
+margin:0,
+stagePadding:0,
+merge:false,
+mergeFit:true,
+autoWidth:false,
+startPosition:0,
+rtl:false,
+smartSpeed:250,
+fluidSpeed:false,
+dragEndSpeed:false,
+responsive:{},
+responsiveRefreshRate:200,
+responsiveBaseElement:window,
+responsiveClass:false,
+fallbackEasing:'swing',
+info:false,
+nestedItemSelector:false,
+itemElement:'div',
+stageElement:'div',
+themeClass:'owl-theme',
+baseClass:'owl-carousel',
+itemClass:'owl-item',
+centerClass:'center',
+activeClass:'active'
+};
+Owl.Width={
+Default:'default',
+Inner:'inner',
+Outer:'outer'
+};
+Owl.Plugins={};
+Owl.Pipe=[ {
+filter:[ 'width', 'items', 'settings' ],
+run:function(cache){
+cache.current=this._items && this._items[this.relative(this._current)];
+}}, {
+filter:[ 'items', 'settings' ],
+run:function(){
+var cached=this._clones,
+clones=this.$stage.children('.cloned');
+if(clones.length!==cached.length || (!this.settings.loop && cached.length > 0)){
+this.$stage.children('.cloned').remove();
+this._clones=[];
+}}
+}, {
+filter:[ 'items', 'settings' ],
+run:function(){
+var i, n,
+clones=this._clones,
+items=this._items,
+delta=this.settings.loop ? clones.length - Math.max(this.settings.items * 2, 4):0;
+for (i=0, n=Math.abs(delta / 2); i < n; i++){
+if(delta > 0){
+this.$stage.children().eq(items.length + clones.length - 1).remove();
+clones.pop();
+this.$stage.children().eq(0).remove();
+clones.pop();
+}else{
+clones.push(clones.length / 2);
+this.$stage.append(items[clones[clones.length - 1]].clone().addClass('cloned'));
+clones.push(items.length - 1 - (clones.length - 1) / 2);
+this.$stage.prepend(items[clones[clones.length - 1]].clone().addClass('cloned'));
+}}
+}}, {
+filter:[ 'width', 'items', 'settings' ],
+run:function(){
+var rtl=(this.settings.rtl ? 1:-1),
+width=(this.width() / this.settings.items).toFixed(3),
+coordinate=0, merge, i, n;
+this._coordinates=[];
+for (i=0, n=this._clones.length + this._items.length; i < n; i++){
+merge=this._mergers[this.relative(i)];
+merge=(this.settings.mergeFit && Math.min(merge, this.settings.items)) || merge;
+coordinate +=(this.settings.autoWidth ? this._items[this.relative(i)].width() + this.settings.margin:width * merge) * rtl;
+this._coordinates.push(coordinate);
+}}
+}, {
+filter:[ 'width', 'items', 'settings' ],
+run:function(){
+var i, n, width=(this.width() / this.settings.items).toFixed(3), css={
+'width':Math.abs(this._coordinates[this._coordinates.length - 1]) + this.settings.stagePadding * 2,
+'padding-left':this.settings.stagePadding || '',
+'padding-right':this.settings.stagePadding || ''
+};
+this.$stage.css(css);
+css={ 'width':this.settings.autoWidth ? 'auto':width - this.settings.margin };
+css[this.settings.rtl ? 'margin-left':'margin-right']=this.settings.margin;
+if(!this.settings.autoWidth && $.grep(this._mergers, function(v){ return v > 1 }).length > 0){
+for (i=0, n=this._coordinates.length; i < n; i++){
+css.width=Math.abs(this._coordinates[i]) - Math.abs(this._coordinates[i - 1] || 0) - this.settings.margin;
+this.$stage.children().eq(i).css(css);
+}}else{
+this.$stage.children().css(css);
+}}
+}, {
+filter:[ 'width', 'items', 'settings' ],
+run:function(cache){
+cache.current && this.reset(this.$stage.children().index(cache.current));
+}}, {
+filter:[ 'position' ],
+run:function(){
+this.animate(this.coordinates(this._current));
+}}, {
+filter:[ 'width', 'position', 'items', 'settings' ],
+run:function(){
+var rtl=this.settings.rtl ? 1:-1,
+padding=this.settings.stagePadding * 2,
+begin=this.coordinates(this.current()) + padding,
+end=begin + this.width() * rtl,
+inner, outer, matches=[], i, n;
+for (i=0, n=this._coordinates.length; i < n; i++){
+inner=this._coordinates[i - 1] || 0;
+outer=Math.abs(this._coordinates[i]) + padding * rtl;
+if((this.op(inner, '<=', begin) && (this.op(inner, '>', end)))
+|| (this.op(outer, '<', begin) && this.op(outer, '>', end))){
+matches.push(i);
+}}
+this.$stage.children('.' + this.settings.activeClass).removeClass(this.settings.activeClass);
+this.$stage.children(':eq(' + matches.join('),:eq(') + ')').addClass(this.settings.activeClass);
+if(this.settings.center){
+this.$stage.children('.' + this.settings.centerClass).removeClass(this.settings.centerClass);
+this.$stage.children().eq(this.current()).addClass(this.settings.centerClass);
+}}
+} ];
+Owl.prototype.initialize=function(){
+this.trigger('initialize');
+this.$element
+.addClass(this.settings.baseClass)
+.addClass(this.settings.themeClass)
+.toggleClass('owl-rtl', this.settings.rtl);
+this.browserSupport();
+if(this.settings.autoWidth && this.state.imagesLoaded!==true){
+var imgs, nestedSelector, width;
+imgs=this.$element.find('img');
+nestedSelector=this.settings.nestedItemSelector ? '.' + this.settings.nestedItemSelector:undefined;
+width=this.$element.children(nestedSelector).width();
+if(imgs.length && width <=0){
+this.preloadAutoWidthImages(imgs);
+return false;
+}}
+this.$element.addClass('owl-loading');
+this.$stage=$('<' + this.settings.stageElement + ' class="owl-stage"/>')
+.wrap('<div class="owl-stage-outer">');
+this.$element.append(this.$stage.parent());
+this.replace(this.$element.children().not(this.$stage.parent()));
+this._width=this.$element.width();
+this.refresh();
+this.$element.removeClass('owl-loading').addClass('owl-loaded');
+this.eventsCall();
+this.internalEvents();
+this.addTriggerableEvents();
+this.trigger('initialized');
+};
+Owl.prototype.setup=function(){
+var viewport=this.viewport(),
+overwrites=this.options.responsive,
+match=-1,
+settings=null;
+if(!overwrites){
+settings=$.extend({}, this.options);
+}else{
+$.each(overwrites, function(breakpoint){
+if(breakpoint <=viewport && breakpoint > match){
+match=Number(breakpoint);
+}});settings=$.extend({}, this.options, overwrites[match]);
+delete settings.responsive;
+if(settings.responsiveClass){
+this.$element.attr('class', function(i, c){
+return c.replace(/\b owl-responsive-\S+/g, '');
+}).addClass('owl-responsive-' + match);
+}}
+if(this.settings===null || this._breakpoint!==match){
+this.trigger('change', { property:{ name:'settings', value:settings }});this._breakpoint=match;
+this.settings=settings;
+this.invalidate('settings');
+this.trigger('changed', { property:{ name:'settings', value:this.settings }});}};
+Owl.prototype.optionsLogic=function(){
+this.$element.toggleClass('owl-center', this.settings.center);
+if(this.settings.loop && this._items.length < this.settings.items){
+this.settings.loop=false;
+}
+if(this.settings.autoWidth){
+this.settings.stagePadding=false;
+this.settings.merge=false;
+}};
+Owl.prototype.prepare=function(item){
+var event=this.trigger('prepare', { content:item });if(!event.data){
+event.data=$('<' + this.settings.itemElement + '/>')
+.addClass(this.settings.itemClass).append(item)
+}
+this.trigger('prepared', { content:event.data });return event.data;
+};
+Owl.prototype.update=function(){
+var i=0,
+n=this._pipe.length,
+filter=$.proxy(function(p){ return this[p] }, this._invalidated),
+cache={};
+while (i < n){
+if(this._invalidated.all || $.grep(this._pipe[i].filter, filter).length > 0){
+this._pipe[i].run(cache);
+}
+i++;
+}
+this._invalidated={};};
+Owl.prototype.width=function(dimension){
+dimension=dimension || Owl.Width.Default;
+switch (dimension){
+case Owl.Width.Inner:case Owl.Width.Outer:return this._width;
+default:return this._width - this.settings.stagePadding * 2 + this.settings.margin;
+}};
+Owl.prototype.refresh=function(){
+if(this._items.length===0){
+return false;
+}
+var start=new Date().getTime();
+this.trigger('refresh');
+this.setup();
+this.optionsLogic();
+this.$stage.addClass('owl-refresh');
+this.update();
+this.$stage.removeClass('owl-refresh');
+this.state.orientation=window.orientation;
+this.watchVisibility();
+this.trigger('refreshed');
+};
+Owl.prototype.eventsCall=function(){
+this.e._onDragStart=$.proxy(function(e){
+this.onDragStart(e);
+}, this);
+this.e._onDragMove=$.proxy(function(e){
+this.onDragMove(e);
+}, this);
+this.e._onDragEnd=$.proxy(function(e){
+this.onDragEnd(e);
+}, this);
+this.e._onResize=$.proxy(function(e){
+this.onResize(e);
+}, this);
+this.e._transitionEnd=$.proxy(function(e){
+this.transitionEnd(e);
+}, this);
+this.e._preventClick=$.proxy(function(e){
+this.preventClick(e);
+}, this);
+};
+Owl.prototype.onThrottledResize=function(){
+window.clearTimeout(this.resizeTimer);
+try { this.resizeTimer=window.setTimeout(this.e._onResize, this.settings.responsiveRefreshRate); } 
+catch( e){ }};
+Owl.prototype.onResize=function(){
+if(!this._items.length){
+return false;
+}
+if(this._width===this.$element.width()){
+return false;
+}
+if(this.trigger('resize').isDefaultPrevented()){
+return false;
+}
+this._width=this.$element.width();
+this.invalidate('width');
+this.refresh();
+this.trigger('resized');
+};
+Owl.prototype.eventsRouter=function(event){
+var type=event.type;
+if(type==="mousedown" || type==="touchstart"){
+this.onDragStart(event);
+} else if(type==="mousemove" || type==="touchmove"){
+this.onDragMove(event);
+} else if(type==="mouseup" || type==="touchend"){
+this.onDragEnd(event);
+} else if(type==="touchcancel"){
+this.onDragEnd(event);
+}};
+Owl.prototype.internalEvents=function(){
+var isTouch=isTouchSupport(),
+isTouchIE=isTouchSupportIE();
+if(this.settings.mouseDrag){
+this.$stage.on('mousedown', $.proxy(function(event){ this.eventsRouter(event) }, this));
+this.$stage.on('dragstart', function(){ return false });this.$stage.get(0).onselectstart=function(){ return false };}else{
+this.$element.addClass('owl-text-select-on');
+}
+if(this.settings.touchDrag && !isTouchIE){
+this.$stage.on('touchstart touchcancel', $.proxy(function(event){ this.eventsRouter(event) }, this));
+}
+if(this.transitionEndVendor){
+this.on(this.$stage.get(0), this.transitionEndVendor, this.e._transitionEnd, false);
+}
+if(this.settings.responsive!==false){
+this.on(window, 'resize', $.proxy(this.onThrottledResize, this));
+}};
+Owl.prototype.onDragStart=function(event){
+var ev, isTouchEvent, pageX, pageY, animatedPos;
+ev=event.originalEvent || event || window.event;
+if(ev.which===3 || this.state.isTouch){
+return false;
+}
+if(ev.type==='mousedown'){
+this.$stage.addClass('owl-grab');
+}
+this.trigger('drag');
+this.drag.startTime=new Date().getTime();
+this.speed(0);
+this.state.isTouch=true;
+this.state.isScrolling=false;
+this.state.isSwiping=false;
+this.drag.distance=0;
+pageX=getTouches(ev).x;
+pageY=getTouches(ev).y;
+this.drag.offsetX=this.$stage.position().left;
+this.drag.offsetY=this.$stage.position().top;
+if(this.settings.rtl){
+this.drag.offsetX=this.$stage.position().left + this.$stage.width() - this.width()
++ this.settings.margin;
+}
+if(this.state.inMotion && this.support3d){
+animatedPos=this.getTransformProperty();
+this.drag.offsetX=animatedPos;
+this.animate(animatedPos);
+this.state.inMotion=true;
+} else if(this.state.inMotion && !this.support3d){
+this.state.inMotion=false;
+return false;
+}
+this.drag.startX=pageX - this.drag.offsetX;
+this.drag.startY=pageY - this.drag.offsetY;
+this.drag.start=pageX - this.drag.startX;
+this.drag.targetEl=ev.target || ev.srcElement;
+this.drag.updatedX=this.drag.start;
+if(this.drag.targetEl.tagName==="IMG" || this.drag.targetEl.tagName==="A"){
+this.drag.targetEl.draggable=false;
+}
+$(document).on('mousemove.owl.dragEvents mouseup.owl.dragEvents touchmove.owl.dragEvents touchend.owl.dragEvents', $.proxy(function(event){this.eventsRouter(event)},this));
+};
+Owl.prototype.onDragMove=function(event){
+var ev, isTouchEvent, pageX, pageY, minValue, maxValue, pull;
+if(!this.state.isTouch){
+return;
+}
+if(this.state.isScrolling){
+return;
+}
+ev=event.originalEvent || event || window.event;
+pageX=getTouches(ev).x;
+pageY=getTouches(ev).y;
+this.drag.currentX=pageX - this.drag.startX;
+this.drag.currentY=pageY - this.drag.startY;
+this.drag.distance=this.drag.currentX - this.drag.offsetX;
+if(this.drag.distance < 0){
+this.state.direction=this.settings.rtl ? 'right':'left';
+} else if(this.drag.distance > 0){
+this.state.direction=this.settings.rtl ? 'left':'right';
+}
+if(this.settings.loop){
+if(this.op(this.drag.currentX, '>', this.coordinates(this.minimum())) && this.state.direction==='right'){
+this.drag.currentX -=(this.settings.center && this.coordinates(0)) - this.coordinates(this._items.length);
+} else if(this.op(this.drag.currentX, '<', this.coordinates(this.maximum())) && this.state.direction==='left'){
+this.drag.currentX +=(this.settings.center && this.coordinates(0)) - this.coordinates(this._items.length);
+}}else{
+minValue=this.settings.rtl ? this.coordinates(this.maximum()):this.coordinates(this.minimum());
+maxValue=this.settings.rtl ? this.coordinates(this.minimum()):this.coordinates(this.maximum());
+pull=this.settings.pullDrag ? this.drag.distance / 5:0;
+this.drag.currentX=Math.max(Math.min(this.drag.currentX, minValue + pull), maxValue + pull);
+}
+if((this.drag.distance > 8 || this.drag.distance < -8)){
+if(ev.preventDefault!==undefined){
+ev.preventDefault();
+}else{
+ev.returnValue=false;
+}
+this.state.isSwiping=true;
+}
+this.drag.updatedX=this.drag.currentX;
+if((this.drag.currentY > 16 || this.drag.currentY < -16) && this.state.isSwiping===false){
+this.state.isScrolling=true;
+this.drag.updatedX=this.drag.start;
+}
+this.animate(this.drag.updatedX);
+};
+Owl.prototype.onDragEnd=function(event){
+var compareTimes, distanceAbs, closest;
+if(!this.state.isTouch){
+return;
+}
+if(event.type==='mouseup'){
+this.$stage.removeClass('owl-grab');
+}
+this.trigger('dragged');
+this.drag.targetEl.removeAttribute("draggable");
+this.state.isTouch=false;
+this.state.isScrolling=false;
+this.state.isSwiping=false;
+if(this.drag.distance===0 && this.state.inMotion!==true){
+this.state.inMotion=false;
+return false;
+}
+this.drag.endTime=new Date().getTime();
+compareTimes=this.drag.endTime - this.drag.startTime;
+distanceAbs=Math.abs(this.drag.distance);
+if(distanceAbs > 3 || compareTimes > 300){
+this.removeClick(this.drag.targetEl);
+}
+closest=this.closest(this.drag.updatedX);
+this.speed(this.settings.dragEndSpeed || this.settings.smartSpeed);
+this.current(closest);
+this.invalidate('position');
+this.update();
+if(!this.settings.pullDrag && this.drag.updatedX===this.coordinates(closest)){
+this.transitionEnd();
+}
+this.drag.distance=0;
+$(document).off('.owl.dragEvents');
+};
+Owl.prototype.removeClick=function(target){
+this.drag.targetEl=target;
+$(target).on('click.preventClick', this.e._preventClick);
+window.setTimeout(function(){
+$(target).off('click.preventClick');
+}, 300);
+};
+Owl.prototype.preventClick=function(ev){
+if(ev.preventDefault){
+ev.preventDefault();
+}else{
+ev.returnValue=false;
+}
+if(ev.stopPropagation){
+ev.stopPropagation();
+}
+$(ev.target).off('click.preventClick');
+};
+Owl.prototype.getTransformProperty=function(){
+var transform, matrix3d;
+transform=window.getComputedStyle(this.$stage.get(0), null).getPropertyValue(this.vendorName + 'transform');
+transform=transform.replace(/matrix(3d)?\(|\)/g, '').split(',');
+matrix3d=transform.length===16;
+return matrix3d!==true ? transform[4]:transform[12];
+};
+Owl.prototype.closest=function(coordinate){
+var position=-1, pull=30, width=this.width(), coordinates=this.coordinates();
+if(!this.settings.freeDrag){
+$.each(coordinates, $.proxy(function(index, value){
+if(coordinate > value - pull && coordinate < value + pull){
+position=index;
+} else if(this.op(coordinate, '<', value)
+&& this.op(coordinate, '>', coordinates[index + 1] || value - width)){
+position=this.state.direction==='left' ? index + 1:index;
+}
+return position===-1;
+}, this));
+}
+if(!this.settings.loop){
+if(this.op(coordinate, '>', coordinates[this.minimum()])){
+position=coordinate=this.minimum();
+} else if(this.op(coordinate, '<', coordinates[this.maximum()])){
+position=coordinate=this.maximum();
+}}
+return position;
+};
+Owl.prototype.animate=function(coordinate){
+this.trigger('translate');
+this.state.inMotion=this.speed() > 0;
+if(this.support3d){
+this.$stage.css({
+transform:'translate3d(' + coordinate + 'px' + ',0px, 0px)',
+transition:(this.speed() / 1000) + 's'
+});} else if(this.state.isTouch){
+this.$stage.css({
+left:coordinate + 'px'
+});}else{
+this.$stage.animate({
+left:coordinate
+}, this.speed() / 1000, this.settings.fallbackEasing, $.proxy(function(){
+if(this.state.inMotion){
+this.transitionEnd();
+}}, this));
+}};
+Owl.prototype.current=function(position){
+if(position===undefined){
+return this._current;
+}
+if(this._items.length===0){
+return undefined;
+}
+position=this.normalize(position);
+if(this._current!==position){
+var event=this.trigger('change', { property:{ name:'position', value:position }});if(event.data!==undefined){
+position=this.normalize(event.data);
+}
+this._current=position;
+this.invalidate('position');
+this.trigger('changed', { property:{ name:'position', value:this._current }});}
+return this._current;
+};
+Owl.prototype.invalidate=function(part){
+this._invalidated[part]=true;
+}
+Owl.prototype.reset=function(position){
+position=this.normalize(position);
+if(position===undefined){
+return;
+}
+this._speed=0;
+this._current=position;
+this.suppress([ 'translate', 'translated' ]);
+this.animate(this.coordinates(position));
+this.release([ 'translate', 'translated' ]);
+};
+Owl.prototype.normalize=function(position, relative){
+var n=(relative ? this._items.length:this._items.length + this._clones.length);
+if(!$.isNumeric(position) || n < 1){
+return undefined;
+}
+if(this._clones.length){
+position=((position % n) + n) % n;
+}else{
+position=Math.max(this.minimum(relative), Math.min(this.maximum(relative), position));
+}
+return position;
+};
+Owl.prototype.relative=function(position){
+position=this.normalize(position);
+position=position - this._clones.length / 2;
+return this.normalize(position, true);
+};
+Owl.prototype.maximum=function(relative){
+var maximum, width, i=0, coordinate,
+settings=this.settings;
+if(relative){
+return this._items.length - 1;
+}
+if(!settings.loop && settings.center){
+maximum=this._items.length - 1;
+} else if(!settings.loop && !settings.center){
+maximum=this._items.length - settings.items;
+} else if(settings.loop || settings.center){
+maximum=this._items.length + settings.items;
+} else if(settings.autoWidth || settings.merge){
+revert=settings.rtl ? 1:-1;
+width=this.$stage.width() - this.$element.width();
+while (coordinate=this.coordinates(i)){
+if(coordinate * revert >=width){
+break;
+}
+maximum=++i;
+}}else{
+throw 'Can not detect maximum absolute position.'
+}
+return maximum;
+};
+Owl.prototype.minimum=function(relative){
+if(relative){
+return 0;
+}
+return this._clones.length / 2;
+};
+Owl.prototype.items=function(position){
+if(position===undefined){
+return this._items.slice();
+}
+position=this.normalize(position, true);
+return this._items[position];
+};
+Owl.prototype.mergers=function(position){
+if(position===undefined){
+return this._mergers.slice();
+}
+position=this.normalize(position, true);
+return this._mergers[position];
+};
+Owl.prototype.clones=function(position){
+var odd=this._clones.length / 2,
+even=odd + this._items.length,
+map=function(index){ return index % 2===0 ? even + index / 2:odd - (index + 1) / 2 };
+if(position===undefined){
+return $.map(this._clones, function(v, i){ return map(i) });}
+return $.map(this._clones, function(v, i){ return v===position ? map(i):null });};
+Owl.prototype.speed=function(speed){
+if(speed!==undefined){
+this._speed=speed;
+}
+return this._speed;
+};
+Owl.prototype.coordinates=function(position){
+var coordinate=null;
+if(position===undefined){
+return $.map(this._coordinates, $.proxy(function(coordinate, index){
+return this.coordinates(index);
+}, this));
+}
+if(this.settings.center){
+coordinate=this._coordinates[position];
+coordinate +=(this.width() - coordinate + (this._coordinates[position - 1] || 0)) / 2 * (this.settings.rtl ? -1:1);
+}else{
+coordinate=this._coordinates[position - 1] || 0;
+}
+return coordinate;
+};
+Owl.prototype.duration=function(from, to, factor){
+return Math.min(Math.max(Math.abs(to - from), 1), 6) * Math.abs((factor || this.settings.smartSpeed));
+};
+Owl.prototype.to=function(position, speed){
+if(this.settings.loop){
+var distance=position - this.relative(this.current()),
+revert=this.current(),
+before=this.current(),
+after=this.current() + distance,
+direction=before - after < 0 ? true:false,
+items=this._clones.length + this._items.length;
+if(after < this.settings.items && direction===false){
+revert=before + this._items.length;
+this.reset(revert);
+} else if(after >=items - this.settings.items && direction===true){
+revert=before - this._items.length;
+this.reset(revert);
+}
+window.clearTimeout(this.e._goToLoop);
+this.e._goToLoop=window.setTimeout($.proxy(function(){
+this.speed(this.duration(this.current(), revert + distance, speed));
+this.current(revert + distance);
+this.update();
+}, this), 30);
+}else{
+this.speed(this.duration(this.current(), position, speed));
+this.current(position);
+this.update();
+}};
+Owl.prototype.next=function(speed){
+speed=speed || false;
+this.to(this.relative(this.current()) + 1, speed);
+};
+Owl.prototype.prev=function(speed){
+speed=speed || false;
+this.to(this.relative(this.current()) - 1, speed);
+};
+Owl.prototype.transitionEnd=function(event){
+if(event!==undefined){
+event.stopPropagation();
+if((event.target || event.srcElement || event.originalTarget)!==this.$stage.get(0)){
+return false;
+}}
+this.state.inMotion=false;
+this.trigger('translated');
+};
+Owl.prototype.viewport=function(){
+var width;
+if(this.options.responsiveBaseElement!==window){
+width=$(this.options.responsiveBaseElement).width();
+} else if(window.innerWidth){
+width=window.innerWidth;
+} else if(document.documentElement && document.documentElement.clientWidth){
+width=document.documentElement.clientWidth;
+}else{
+throw 'Can not detect viewport width.';
+}
+return width;
+};
+Owl.prototype.replace=function(content){
+this.$stage.empty();
+this._items=[];
+if(content){
+content=(content instanceof jQuery) ? content:$(content);
+}
+if(this.settings.nestedItemSelector){
+content=content.find('.' + this.settings.nestedItemSelector);
+}
+content.filter(function(){
+return this.nodeType===1;
+}).each($.proxy(function(index, item){
+item=this.prepare(item);
+this.$stage.append(item);
+this._items.push(item);
+this._mergers.push(item.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+}, this));
+this.reset($.isNumeric(this.settings.startPosition) ? this.settings.startPosition:0);
+this.invalidate('items');
+};
+Owl.prototype.add=function(content, position){
+position=position===undefined ? this._items.length:this.normalize(position, true);
+this.trigger('add', { content:content, position:position });if(this._items.length===0 || position===this._items.length){
+this.$stage.append(content);
+this._items.push(content);
+this._mergers.push(content.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+}else{
+this._items[position].before(content);
+this._items.splice(position, 0, content);
+this._mergers.splice(position, 0, content.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+}
+this.invalidate('items');
+this.trigger('added', { content:content, position:position });};
+Owl.prototype.remove=function(position){
+position=this.normalize(position, true);
+if(position===undefined){
+return;
+}
+this.trigger('remove', { content:this._items[position], position:position });this._items[position].remove();
+this._items.splice(position, 1);
+this._mergers.splice(position, 1);
+this.invalidate('items');
+this.trigger('removed', { content:null, position:position });};
+Owl.prototype.addTriggerableEvents=function(){
+var handler=$.proxy(function(callback, event){
+return $.proxy(function(e){
+if(e.relatedTarget!==this){
+this.suppress([ event ]);
+callback.apply(this, [].slice.call(arguments, 1));
+this.release([ event ]);
+}}, this);
+}, this);
+$.each({
+'next':this.next,
+'prev':this.prev,
+'to':this.to,
+'destroy':this.destroy,
+'refresh':this.refresh,
+'replace':this.replace,
+'add':this.add,
+'remove':this.remove
+}, $.proxy(function(event, callback){
+this.$element.on(event + '.owl.carousel', handler(callback, event + '.owl.carousel'));
+}, this));
+};
+Owl.prototype.watchVisibility=function(){
+if(!isElVisible(this.$element.get(0))){
+this.$element.addClass('owl-hidden');
+window.clearInterval(this.e._checkVisibile);
+this.e._checkVisibile=window.setInterval($.proxy(checkVisible, this), 500);
+}
+function isElVisible(el){
+return el.offsetWidth > 0 && el.offsetHeight > 0;
+}
+function checkVisible(){
+if(isElVisible(this.$element.get(0))){
+this.$element.removeClass('owl-hidden');
+this.refresh();
+window.clearInterval(this.e._checkVisibile);
+}}
+};
+Owl.prototype.preloadAutoWidthImages=function(imgs){
+var loaded, that, $el, img;
+loaded=0;
+that=this;
+imgs.each(function(i, el){
+$el=$(el);
+img=new Image();
+img.onload=function(){
+loaded++;
+$el.attr('src', img.src);
+$el.css('opacity', 1);
+if(loaded >=imgs.length){
+that.state.imagesLoaded=true;
+that.initialize();
+}};
+img.src=$el.attr('src') || $el.attr('data-src') || $el.attr('data-src-retina');
+});};
+Owl.prototype.destroy=function(){
+if(this.$element.hasClass(this.settings.themeClass)){
+this.$element.removeClass(this.settings.themeClass);
+}
+if(this.settings.responsive!==false){
+$(window).off('resize.owl.carousel');
+}
+if(this.transitionEndVendor){
+this.off(this.$stage.get(0), this.transitionEndVendor, this.e._transitionEnd);
+}
+for ( var i in this._plugins){
+this._plugins[i].destroy();
+}
+if(this.settings.mouseDrag || this.settings.touchDrag){
+this.$stage.off('mousedown touchstart touchcancel');
+$(document).off('.owl.dragEvents');
+this.$stage.get(0).onselectstart=function(){};
+this.$stage.off('dragstart', function(){ return false });}
+this.$element.off('.owl');
+this.$stage.children('.cloned').remove();
+this.e=null;
+this.$element.removeData('owlCarousel');
+this.$stage.children().contents().unwrap();
+this.$stage.children().unwrap();
+this.$stage.unwrap();
+};
+Owl.prototype.op=function(a, o, b){
+var rtl=this.settings.rtl;
+switch (o){
+case '<':return rtl ? a > b:a < b;
+case '>':return rtl ? a < b:a > b;
+case '>=':return rtl ? a <=b:a >=b;
+case '<=':return rtl ? a >=b:a <=b;
+default:break;
+}};
+Owl.prototype.on=function(element, event, listener, capture){
+if(element.addEventListener){
+element.addEventListener(event, listener, capture);
+} else if(element.attachEvent){
+element.attachEvent('on' + event, listener);
+}};
+Owl.prototype.off=function(element, event, listener, capture){
+if(element.removeEventListener){
+element.removeEventListener(event, listener, capture);
+} else if(element.detachEvent){
+element.detachEvent('on' + event, listener);
+}};
+Owl.prototype.trigger=function(name, data, namespace){
+var status={
+item:{ count:this._items.length, index:this.current() }}, handler=$.camelCase(
+$.grep([ 'on', name, namespace ], function(v){ return v })
+.join('-').toLowerCase()), event=$.Event(
+[ name, 'owl', namespace || 'carousel' ].join('.').toLowerCase(),
+$.extend({ relatedTarget:this }, status, data));
+if(!this._supress[name]){
+$.each(this._plugins, function(name, plugin){
+if(plugin.onTrigger){
+plugin.onTrigger(event);
+}});this.$element.trigger(event);
+if(this.settings && typeof this.settings[handler]==='function'){
+this.settings[handler].apply(this, event);
+}}
+return event;
+};
+Owl.prototype.suppress=function(events){
+$.each(events, $.proxy(function(index, event){
+this._supress[event]=true;
+}, this));
+}
+Owl.prototype.release=function(events){
+$.each(events, $.proxy(function(index, event){
+delete this._supress[event];
+}, this));
+}
+Owl.prototype.browserSupport=function(){
+this.support3d=isPerspective();
+if(this.support3d){
+this.transformVendor=isTransform();
+var endVendors=[ 'transitionend', 'webkitTransitionEnd', 'transitionend', 'oTransitionEnd' ];
+this.transitionEndVendor=endVendors[isTransition()];
+this.vendorName=this.transformVendor.replace(/Transform/i, '');
+this.vendorName=this.vendorName!=='' ? '-' + this.vendorName.toLowerCase() + '-':'';
+}
+this.state.orientation=window.orientation;
+};
+function getTouches(event){
+if(event.touches!==undefined){
+return {
+x:event.touches[0].pageX,
+y:event.touches[0].pageY
+};}
+if(event.touches===undefined){
+if(event.pageX!==undefined){
+return {
+x:event.pageX,
+y:event.pageY
+};}
+if(event.pageX===undefined){
+return {
+x:event.clientX,
+y:event.clientY
+};}}
+}
+function isStyleSupported(array){
+var p, s, fake=document.createElement('div'), list=array;
+for (p in list){
+s=list[p];
+if(typeof fake.style[s]!=='undefined'){
+fake=null;
+return [ s, p ];
+}}
+return [ false ];
+}
+function isTransition(){
+return isStyleSupported([ 'transition', 'WebkitTransition', 'MozTransition', 'OTransition' ])[1];
+}
+function isTransform(){
+return isStyleSupported([ 'transform', 'WebkitTransform', 'MozTransform', 'OTransform', 'msTransform' ])[0];
+}
+function isPerspective(){
+return isStyleSupported([ 'perspective', 'webkitPerspective', 'MozPerspective', 'OPerspective', 'MsPerspective' ])[0];
+}
+function isTouchSupport(){
+return 'ontouchstart' in window || !!(navigator.msMaxTouchPoints);
+}
+function isTouchSupportIE(){
+return window.navigator.msPointerEnabled;
+}
+$.fn.owlCarousel=function(options){
+return this.each(function(){
+if(!$(this).data('owlCarousel')){
+$(this).data('owlCarousel', new Owl(this, options));
+}});};
+$.fn.owlCarousel.Constructor=Owl;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+var Lazy=function(carousel){
+this._core=carousel;
+this._loaded=[];
+this._handlers={
+'initialized.owl.carousel change.owl.carousel':$.proxy(function(e){
+if(!e.namespace){
+return;
+}
+if(!this._core.settings || !this._core.settings.lazyLoad){
+return;
+}
+if((e.property && e.property.name=='position') || e.type=='initialized'){
+var settings=this._core.settings,
+n=(settings.center && Math.ceil(settings.items / 2) || settings.items),
+i=((settings.center && n * -1) || 0),
+position=((e.property && e.property.value) || this._core.current()) + i,
+clones=this._core.clones().length,
+load=$.proxy(function(i, v){ this.load(v) }, this);
+while (i++ < n){
+this.load(clones / 2 + this._core.relative(position));
+clones && $.each(this._core.clones(this._core.relative(position++)), load);
+}}
+}, this)
+};
+this._core.options=$.extend({}, Lazy.Defaults, this._core.options);
+this._core.$element.on(this._handlers);
+}
+Lazy.Defaults={
+lazyLoad:false
+}
+Lazy.prototype.load=function(position){
+var $item=this._core.$stage.children().eq(position),
+$elements=$item && $item.find('.owl-lazy');
+if(!$elements || $.inArray($item.get(0), this._loaded) > -1){
+return;
+}
+$elements.each($.proxy(function(index, element){
+var $element=$(element), image,
+url=(window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src');
+this._core.trigger('load', { element:$element, url:url }, 'lazy');
+if($element.is('img')){
+$element.one('load.owl.lazy', $.proxy(function(){
+$element.css('opacity', 1);
+this._core.trigger('loaded', { element:$element, url:url }, 'lazy');
+}, this)).attr('src', url);
+}else{
+image=new Image();
+image.onload=$.proxy(function(){
+$element.css({
+'background-image':'url(' + url + ')',
+'opacity':'1'
+});this._core.trigger('loaded', { element:$element, url:url }, 'lazy');
+}, this);
+image.src=url;
+}}, this));
+this._loaded.push($item.get(0));
+}
+Lazy.prototype.destroy=function(){
+var handler, property;
+for (handler in this.handlers){
+this._core.$element.off(handler, this.handlers[handler]);
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}}
+$.fn.owlCarousel.Constructor.Plugins.Lazy=Lazy;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+var AutoHeight=function(carousel){
+this._core=carousel;
+this._handlers={
+'initialized.owl.carousel':$.proxy(function(){
+if(this._core.settings.autoHeight){
+this.update();
+}}, this),
+'changed.owl.carousel':$.proxy(function(e){
+if(this._core.settings.autoHeight && e.property.name=='position'){
+this.update();
+}}, this),
+'loaded.owl.lazy':$.proxy(function(e){
+if(this._core.settings.autoHeight && e.element.closest('.' + this._core.settings.itemClass)===this._core.$stage.children().eq(this._core.current())){
+this.update();
+}}, this)
+};
+this._core.options=$.extend({}, AutoHeight.Defaults, this._core.options);
+this._core.$element.on(this._handlers);
+};
+AutoHeight.Defaults={
+autoHeight:false,
+autoHeightClass:'owl-height'
+};
+AutoHeight.prototype.update=function(){
+this._core.$stage.parent()
+.height(this._core.$stage.children().eq(this._core.current()).height())
+.addClass(this._core.settings.autoHeightClass);
+};
+AutoHeight.prototype.destroy=function(){
+var handler, property;
+for (handler in this._handlers){
+this._core.$element.off(handler, this._handlers[handler]);
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}};
+$.fn.owlCarousel.Constructor.Plugins.AutoHeight=AutoHeight;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+var Video=function(carousel){
+this._core=carousel;
+this._videos={};
+this._playing=null;
+this._fullscreen=false;
+this._handlers={
+'resize.owl.carousel':$.proxy(function(e){
+if(this._core.settings.video && !this.isInFullScreen()){
+e.preventDefault();
+}}, this),
+'refresh.owl.carousel changed.owl.carousel':$.proxy(function(e){
+if(this._playing){
+this.stop();
+}}, this),
+'prepared.owl.carousel':$.proxy(function(e){
+var $element=$(e.content).find('.owl-video');
+if($element.length){
+$element.css('display', 'none');
+this.fetch($element, $(e.content));
+}}, this)
+};
+this._core.options=$.extend({}, Video.Defaults, this._core.options);
+this._core.$element.on(this._handlers);
+this._core.$element.on('click.owl.video', '.owl-video-play-icon', $.proxy(function(e){
+this.play(e);
+}, this));
+};
+Video.Defaults={
+video:false,
+videoHeight:false,
+videoWidth:false
+};
+Video.prototype.fetch=function(target, item){
+var type=target.attr('data-vimeo-id') ? 'vimeo':'youtube',
+id=target.attr('data-vimeo-id') || target.attr('data-youtube-id'),
+width=target.attr('data-width') || this._core.settings.videoWidth,
+height=target.attr('data-height') || this._core.settings.videoHeight,
+url=target.attr('href');
+if(url){
+id=url.match(/(http:|https:|)\/\/(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
+if(id[3].indexOf('youtu') > -1){
+type='youtube';
+} else if(id[3].indexOf('vimeo') > -1){
+type='vimeo';
+}else{
+throw new Error('Video URL not supported.');
+}
+id=id[6];
+}else{
+throw new Error('Missing video URL.');
+}
+this._videos[url]={
+type:type,
+id:id,
+width:width,
+height:height
+};
+item.attr('data-video', url);
+this.thumbnail(target, this._videos[url]);
+};
+Video.prototype.thumbnail=function(target, video){
+var tnLink,
+icon,
+path,
+dimensions=video.width && video.height ? 'style="width:' + video.width + 'px;height:' + video.height + 'px;"':'',
+customTn=target.find('img'),
+srcType='src',
+lazyClass='',
+settings=this._core.settings,
+create=function(path){
+icon='<div class="owl-video-play-icon"></div>';
+if(settings.lazyLoad){
+tnLink='<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>';
+}else{
+tnLink='<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>';
+}
+target.after(tnLink);
+target.after(icon);
+};
+target.wrap('<div class="owl-video-wrapper"' + dimensions + '></div>');
+if(this._core.settings.lazyLoad){
+srcType='data-src';
+lazyClass='owl-lazy';
+}
+if(customTn.length){
+create(customTn.attr(srcType));
+customTn.remove();
+return false;
+}
+if(video.type==='youtube'){
+path="http://img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
+create(path);
+} else if(video.type==='vimeo'){
+$.ajax({
+type:'GET',
+url:'http://vimeo.com/api/v2/video/' + video.id + '.json',
+jsonp:'callback',
+dataType:'jsonp',
+success:function(data){
+path=data[0].thumbnail_large;
+create(path);
+}});}};
+Video.prototype.stop=function(){
+this._core.trigger('stop', null, 'video');
+this._playing.find('.owl-video-frame').remove();
+this._playing.removeClass('owl-video-playing');
+this._playing=null;
+};
+Video.prototype.play=function(ev){
+this._core.trigger('play', null, 'video');
+if(this._playing){
+this.stop();
+}
+var target=$(ev.target || ev.srcElement),
+item=target.closest('.' + this._core.settings.itemClass),
+video=this._videos[item.attr('data-video')],
+width=video.width || '100%',
+height=video.height || this._core.$stage.height(),
+html, wrap;
+if(video.type==='youtube'){
+html='<iframe width="' + width + '" height="' + height + '" src="http://www.youtube.com/embed/'
++ video.id + '?autoplay=1&v=' + video.id + '" frameborder="0" allowfullscreen></iframe>';
+} else if(video.type==='vimeo'){
+html='<iframe src="http://player.vimeo.com/video/' + video.id + '?autoplay=1" width="' + width
++ '" height="' + height
++ '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+}
+item.addClass('owl-video-playing');
+this._playing=item;
+wrap=$('<div style="height:' + height + 'px; width:' + width + 'px" class="owl-video-frame">'
++ html + '</div>');
+target.after(wrap);
+};
+Video.prototype.isInFullScreen=function(){
+var element=document.fullscreenElement || document.mozFullScreenElement
+|| document.webkitFullscreenElement;
+if(element && $(element).parent().hasClass('owl-video-frame')){
+this._core.speed(0);
+this._fullscreen=true;
+}
+if(element && this._fullscreen && this._playing){
+return false;
+}
+if(this._fullscreen){
+this._fullscreen=false;
+return false;
+}
+if(this._playing){
+if(this._core.state.orientation!==window.orientation){
+this._core.state.orientation=window.orientation;
+return false;
+}}
+return true;
+};
+Video.prototype.destroy=function(){
+var handler, property;
+this._core.$element.off('click.owl.video');
+for (handler in this._handlers){
+this._core.$element.off(handler, this._handlers[handler]);
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}};
+$.fn.owlCarousel.Constructor.Plugins.Video=Video;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+var Animate=function(scope){
+this.core=scope;
+this.core.options=$.extend({}, Animate.Defaults, this.core.options);
+this.swapping=true;
+this.previous=undefined;
+this.next=undefined;
+this.handlers={
+'change.owl.carousel':$.proxy(function(e){
+if(e.property.name=='position'){
+this.previous=this.core.current();
+this.next=e.property.value;
+}}, this),
+'drag.owl.carousel dragged.owl.carousel translated.owl.carousel':$.proxy(function(e){
+this.swapping=e.type=='translated';
+}, this),
+'translate.owl.carousel':$.proxy(function(e){
+if(this.swapping && (this.core.options.animateOut || this.core.options.animateIn)){
+this.swap();
+}}, this)
+};
+this.core.$element.on(this.handlers);
+};
+Animate.Defaults={
+animateOut:false,
+animateIn:false
+};
+Animate.prototype.swap=function(){
+if(this.core.settings.items!==1 || !this.core.support3d){
+return;
+}
+this.core.speed(0);
+var left,
+clear=$.proxy(this.clear, this),
+previous=this.core.$stage.children().eq(this.previous),
+next=this.core.$stage.children().eq(this.next),
+incoming=this.core.settings.animateIn,
+outgoing=this.core.settings.animateOut;
+if(this.core.current()===this.previous){
+return;
+}
+if(outgoing){
+left=this.core.coordinates(this.previous) - this.core.coordinates(this.next);
+previous.css( { 'left':left + 'px' })
+.addClass('animated owl-animated-out')
+.addClass(outgoing)
+.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', clear);
+}
+if(incoming){
+next.addClass('animated owl-animated-in')
+.addClass(incoming)
+.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', clear);
+}};
+Animate.prototype.clear=function(e){
+$(e.target).css( { 'left':'' })
+.removeClass('animated owl-animated-out owl-animated-in')
+.removeClass(this.core.settings.animateIn)
+.removeClass(this.core.settings.animateOut);
+this.core.transitionEnd();
+}
+Animate.prototype.destroy=function(){
+var handler, property;
+for (handler in this.handlers){
+this.core.$element.off(handler, this.handlers[handler]);
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}};
+$.fn.owlCarousel.Constructor.Plugins.Animate=Animate;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+var Autoplay=function(scope){
+this.core=scope;
+this.core.options=$.extend({}, Autoplay.Defaults, this.core.options);
+this.handlers={
+'translated.owl.carousel refreshed.owl.carousel':$.proxy(function(){
+this.autoplay();
+}, this),
+'play.owl.autoplay':$.proxy(function(e, t, s){
+this.play(t, s);
+}, this),
+'stop.owl.autoplay':$.proxy(function(){
+this.stop();
+}, this),
+'mouseover.owl.autoplay':$.proxy(function(){
+if(this.core.settings.autoplayHoverPause){
+this.pause();
+}}, this),
+'mouseleave.owl.autoplay':$.proxy(function(){
+if(this.core.settings.autoplayHoverPause){
+this.autoplay();
+}}, this)
+};
+this.core.$element.on(this.handlers);
+};
+Autoplay.Defaults={
+autoplay:false,
+autoplayTimeout:5000,
+autoplayHoverPause:false,
+autoplaySpeed:false
+};
+Autoplay.prototype.autoplay=function(){
+if(this.core.settings.autoplay && !this.core.state.videoPlay){
+window.clearInterval(this.interval);
+this.interval=window.setInterval($.proxy(function(){
+this.play();
+}, this), this.core.settings.autoplayTimeout);
+}else{
+window.clearInterval(this.interval);
+}};
+Autoplay.prototype.play=function(timeout, speed){
+if(document.hidden===true){
+return;
+}
+if(this.core.state.isTouch || this.core.state.isScrolling
+|| this.core.state.isSwiping || this.core.state.inMotion){
+return;
+}
+if(this.core.settings.autoplay===false){
+window.clearInterval(this.interval);
+return;
+}
+this.core.next(this.core.settings.autoplaySpeed);
+};
+Autoplay.prototype.stop=function(){
+window.clearInterval(this.interval);
+};
+Autoplay.prototype.pause=function(){
+window.clearInterval(this.interval);
+};
+Autoplay.prototype.destroy=function(){
+var handler, property;
+window.clearInterval(this.interval);
+for (handler in this.handlers){
+this.core.$element.off(handler, this.handlers[handler]);
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}};
+$.fn.owlCarousel.Constructor.Plugins.autoplay=Autoplay;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+'use strict';
+var Navigation=function(carousel){
+this._core=carousel;
+this._initialized=false;
+this._pages=[];
+this._controls={};
+this._templates=[];
+this.$element=this._core.$element;
+this._overrides={
+next:this._core.next,
+prev:this._core.prev,
+to:this._core.to
+};
+this._handlers={
+'prepared.owl.carousel':$.proxy(function(e){
+if(this._core.settings.dotsData){
+this._templates.push($(e.content).find('[data-dot]').andSelf('[data-dot]').attr('data-dot'));
+}}, this),
+'add.owl.carousel':$.proxy(function(e){
+if(this._core.settings.dotsData){
+this._templates.splice(e.position, 0, $(e.content).find('[data-dot]').andSelf('[data-dot]').attr('data-dot'));
+}}, this),
+'remove.owl.carousel prepared.owl.carousel':$.proxy(function(e){
+if(this._core.settings.dotsData){
+this._templates.splice(e.position, 1);
+}}, this),
+'change.owl.carousel':$.proxy(function(e){
+if(e.property.name=='position'){
+if(!this._core.state.revert && !this._core.settings.loop && this._core.settings.navRewind){
+var current=this._core.current(),
+maximum=this._core.maximum(),
+minimum=this._core.minimum();
+e.data=e.property.value > maximum
+? current >=maximum ? minimum:maximum:e.property.value < minimum ? maximum:e.property.value;
+}}
+}, this),
+'changed.owl.carousel':$.proxy(function(e){
+if(e.property.name=='position'){
+this.draw();
+}}, this),
+'refreshed.owl.carousel':$.proxy(function(){
+if(!this._initialized){
+this.initialize();
+this._initialized=true;
+}
+this._core.trigger('refresh', null, 'navigation');
+this.update();
+this.draw();
+this._core.trigger('refreshed', null, 'navigation');
+}, this)
+};
+this._core.options=$.extend({}, Navigation.Defaults, this._core.options);
+this.$element.on(this._handlers);
+}
+Navigation.Defaults={
+nav:false,
+navRewind:true,
+navText:[ 'prev', 'next' ],
+navSpeed:false,
+navElement:'div',
+navContainer:false,
+navContainerClass:'owl-nav',
+navClass:[ 'owl-prev', 'owl-next' ],
+slideBy:1,
+dotClass:'owl-dot',
+dotsClass:'owl-dots',
+dots:true,
+dotsEach:false,
+dotData:false,
+dotsSpeed:false,
+dotsContainer:false,
+controlsClass:'owl-controls'
+}
+Navigation.prototype.initialize=function(){
+var $container, override,
+options=this._core.settings;
+if(!options.dotsData){
+this._templates=[ $('<div>')
+.addClass(options.dotClass)
+.append($('<span>'))
+.prop('outerHTML') ];
+}
+if(!options.navContainer || !options.dotsContainer){
+this._controls.$container=$('<div>')
+.addClass(options.controlsClass)
+.appendTo(this.$element);
+}
+this._controls.$indicators=options.dotsContainer ? $(options.dotsContainer):$('<div>').hide().addClass(options.dotsClass).appendTo(this._controls.$container);
+this._controls.$indicators.on('click', 'div', $.proxy(function(e){
+var index=$(e.target).parent().is(this._controls.$indicators)
+? $(e.target).index():$(e.target).parent().index();
+e.preventDefault();
+this.to(index, options.dotsSpeed);
+}, this));
+$container=options.navContainer ? $(options.navContainer):$('<div>').addClass(options.navContainerClass).prependTo(this._controls.$container);
+this._controls.$next=$('<' + options.navElement + '>');
+this._controls.$previous=this._controls.$next.clone();
+this._controls.$previous
+.addClass(options.navClass[0])
+.html(options.navText[0])
+.hide()
+.prependTo($container)
+.on('click', $.proxy(function(e){
+this.prev(options.navSpeed);
+}, this));
+this._controls.$next
+.addClass(options.navClass[1])
+.html(options.navText[1])
+.hide()
+.appendTo($container)
+.on('click', $.proxy(function(e){
+this.next(options.navSpeed);
+}, this));
+for (override in this._overrides){
+this._core[override]=$.proxy(this[override], this);
+}}
+Navigation.prototype.destroy=function(){
+var handler, control, property, override;
+for (handler in this._handlers){
+this.$element.off(handler, this._handlers[handler]);
+}
+for (control in this._controls){
+this._controls[control].remove();
+}
+for (override in this.overides){
+this._core[override]=this._overrides[override];
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}}
+Navigation.prototype.update=function(){
+var i, j, k,
+options=this._core.settings,
+lower=this._core.clones().length / 2,
+upper=lower + this._core.items().length,
+size=options.center || options.autoWidth || options.dotData
+? 1:options.dotsEach || options.items;
+if(options.slideBy!=='page'){
+options.slideBy=Math.min(options.slideBy, options.items);
+}
+if(options.dots || options.slideBy=='page'){
+this._pages=[];
+for (i=lower, j=0, k=0; i < upper; i++){
+if(j >=size || j===0){
+this._pages.push({
+start:i - lower,
+end:i - lower + size - 1
+});j=0, ++k;
+}
+j +=this._core.mergers(this._core.relative(i));
+}}
+}
+Navigation.prototype.draw=function(){
+var difference, i, html='',
+options=this._core.settings,
+$items=this._core.$stage.children(),
+index=this._core.relative(this._core.current());
+if(options.nav && !options.loop && !options.navRewind){
+this._controls.$previous.toggleClass('disabled', index <=0);
+this._controls.$next.toggleClass('disabled', index >=this._core.maximum());
+}
+this._controls.$previous.toggle(options.nav);
+this._controls.$next.toggle(options.nav);
+if(options.dots){
+difference=this._pages.length - this._controls.$indicators.children().length;
+if(options.dotData && difference!==0){
+for (i=0; i < this._controls.$indicators.children().length; i++){
+html +=this._templates[this._core.relative(i)];
+}
+this._controls.$indicators.html(html);
+} else if(difference > 0){
+html=new Array(difference + 1).join(this._templates[0]);
+this._controls.$indicators.append(html);
+} else if(difference < 0){
+this._controls.$indicators.children().slice(difference).remove();
+}
+this._controls.$indicators.find('.active').removeClass('active');
+this._controls.$indicators.children().eq($.inArray(this.current(), this._pages)).addClass('active');
+}
+this._controls.$indicators.toggle(options.dots);
+}
+Navigation.prototype.onTrigger=function(event){
+var settings=this._core.settings;
+event.page={
+index:$.inArray(this.current(), this._pages),
+count:this._pages.length,
+size:settings && (settings.center || settings.autoWidth || settings.dotData
+? 1:settings.dotsEach || settings.items)
+};}
+Navigation.prototype.current=function(){
+var index=this._core.relative(this._core.current());
+return $.grep(this._pages, function(o){
+return o.start <=index && o.end >=index;
+}).pop();
+}
+Navigation.prototype.getPosition=function(successor){
+var position, length,
+options=this._core.settings;
+if(options.slideBy=='page'){
+position=$.inArray(this.current(), this._pages);
+length=this._pages.length;
+successor ? ++position:--position;
+position=this._pages[((position % length) + length) % length].start;
+}else{
+position=this._core.relative(this._core.current());
+length=this._core.items().length;
+successor ? position +=options.slideBy:position -=options.slideBy;
+}
+return position;
+}
+Navigation.prototype.next=function(speed){
+$.proxy(this._overrides.to, this._core)(this.getPosition(true), speed);
+}
+Navigation.prototype.prev=function(speed){
+$.proxy(this._overrides.to, this._core)(this.getPosition(false), speed);
+}
+Navigation.prototype.to=function(position, speed, standard){
+var length;
+if(!standard){
+length=this._pages.length;
+$.proxy(this._overrides.to, this._core)(this._pages[((position % length) + length) % length].start, speed);
+}else{
+$.proxy(this._overrides.to, this._core)(position, speed);
+}}
+$.fn.owlCarousel.Constructor.Plugins.Navigation=Navigation;
+})(window.Zepto || window.jQuery, window, document);
+;(function($, window, document, undefined){
+'use strict';
+var Hash=function(carousel){
+this._core=carousel;
+this._hashes={};
+this.$element=this._core.$element;
+this._handlers={
+'initialized.owl.carousel':$.proxy(function(){
+if(this._core.settings.startPosition=='URLHash'){
+$(window).trigger('hashchange.owl.navigation');
+}}, this),
+'prepared.owl.carousel':$.proxy(function(e){
+var hash=$(e.content).find('[data-hash]').andSelf('[data-hash]').attr('data-hash');
+this._hashes[hash]=e.content;
+}, this)
+};
+this._core.options=$.extend({}, Hash.Defaults, this._core.options);
+this.$element.on(this._handlers);
+$(window).on('hashchange.owl.navigation', $.proxy(function(){
+var hash=window.location.hash.substring(1),
+items=this._core.$stage.children(),
+position=this._hashes[hash] && items.index(this._hashes[hash]) || 0;
+if(!hash){
+return false;
+}
+this._core.to(position, false, true);
+}, this));
+}
+Hash.Defaults={
+URLhashListener:false
+}
+Hash.prototype.destroy=function(){
+var handler, property;
+$(window).off('hashchange.owl.navigation');
+for (handler in this._handlers){
+this._core.$element.off(handler, this._handlers[handler]);
+}
+for (property in Object.getOwnPropertyNames(this)){
+typeof this[property]!='function' && (this[property]=null);
+}}
+$.fn.owlCarousel.Constructor.Plugins.Hash=Hash;
+})(window.Zepto || window.jQuery, window, document);
